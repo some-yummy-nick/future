@@ -14,6 +14,7 @@ var configWebserver = {
 	server: {
 		baseDir: config.src.server
 	},
+	open: false,
 	host: 'localhost',
 	logPrefix: 'FrontEnd Builder'
 };
