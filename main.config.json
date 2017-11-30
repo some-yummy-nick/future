@@ -27,6 +27,7 @@
 			},
 			"source": {
 				"js": {
+					"jquery": "./templates/main/source/js/libs/jquery-3.2.1.min.js",
 					"dest": ["./templates/main/source/js/**/*.js", "!./templates/main/source/js/libs/jquery-3.2.1.min.js"]
 				},
 				"svg": {
