@@ -61,6 +61,7 @@ gulp.task('css', () => {
 	var inlineSvg = require('postcss-inline-svg');
 	var svgo = require('postcss-svgo');
 	var cssnext = require('postcss-cssnext');
+	var imageInliner = require('postcss-image-inliner');
 
 	var processors = [
 		importAt,
@@ -71,6 +72,9 @@ gulp.task('css', () => {
 		inlineSvg({
 			path: config.src.source.svg.dest,
 			removeFill: true
+		}),
+		imageInliner({
+			assetPaths: ["https://icongr.am"]
 		}),
 		svgo,
 		cssnano
