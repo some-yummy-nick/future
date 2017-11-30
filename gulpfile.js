@@ -15,7 +15,6 @@ var configWebserver = {
 		baseDir: config.src.server
 	},
 	host: 'localhost',
-	port: 1982,
 	logPrefix: 'FrontEnd Builder'
 };
 
