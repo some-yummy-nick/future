@@ -155,6 +155,36 @@ gulp.task('images', function () {
 		.on('end', browserSync.reload);
 });
 
+gulp.task('watch:nunjucks', () => {
+	plugins.watch(config.src.watch.html, () => {
+		gulp.start('nunjucks');
+	});
+});
+
+gulp.task('watch:ajax', () => {
+	plugins.watch(config.src.watch.ajax, () => {
+		gulp.start('ajax');
+	});
+});
+
+gulp.task('watch:css', () => {
+	plugins.watch(config.src.watch.css, () => {
+		gulp.start('css');
+	});
+});
+
+gulp.task('watch:js', () => {
+	plugins.watch(config.src.watch.js, () => {
+		gulp.start('js');
+	});
+});
+
+gulp.task('watch:images', () => {
+	plugins.watch(config.src.watch.images, () => {
+		gulp.start('images');
+	});
+});
+
 gulp.task('watch', () => {
 	plugins.watch(config.src.watch.html, () => {
 		gulp.start('nunjucks');
