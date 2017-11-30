@@ -1,0 +1,40 @@
+	{% include 'head/index.html' %}
+
+	<body>
+
+		<div class="wrapper" id="js-wrapper">
+
+			{% include 'header/global/index.html' %}
+
+			<div class="middle">
+				<div class="middle__container">
+
+					<div class="content">
+						<!-- WORKAREA -->
+
+						{% include 'breadcrumbs/index.html' %}
+
+						<div class="title">Навигация</div>
+
+						{% include 'checkbox/index.html' %}
+
+						{% include 'pagination/index.html' %}
+
+						<!-- END WORKAREA -->
+					</div>
+					<!-- /.content -->
+
+				</div>
+				<!-- /.middle__container -->
+			</div>
+			<!-- /.middle -->
+
+		</div>
+		<!-- /.wrapper -->
+
+		{% include 'footer/global/index.html' %}
+		{% include 'connect/script.html' %}
+		{% include 'connect/stylesheet.html' %}
+
+	</body>
+</html>

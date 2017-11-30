@@ -1,0 +1,37 @@
+.menu-footer {
+	float: left;
+	margin: 0 100px 34px 0;
+
+	@media (--phone) {
+		float: none;
+		margin: 0 0 35px;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	&__item {
+		display: inline-block;
+		margin-right: 60px;
+
+		@media (--phone) {
+			display: block;
+			margin: 0 0 10px;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	&__link {
+		color: #ffffff;
+		font-family: Webnar;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 24px;
+	}
+}

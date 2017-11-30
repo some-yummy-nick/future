@@ -1,0 +1,30 @@
+.header {
+	width: 100%;
+	min-width: 1200px;
+	margin-bottom: 29px;
+
+	@media (--phone) {
+		min-width: 320px;
+	}
+
+	&__top {
+		padding: 0 15px;
+		height: 89px;
+	}
+
+	&__inner {
+		margin: 0 auto;
+		max-width: 1170px;
+		height: 100%;
+
+		&_bottom {
+
+		}
+	}
+
+	&__bottom {
+		padding: 0 15px;
+		height: 48px;
+		background-color: #0092d4;
+	}
+}

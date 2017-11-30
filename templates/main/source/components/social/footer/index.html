@@ -1,0 +1,18 @@
+{% set items = [
+	'facebook',
+	'vk',
+	'odnoklassniki',
+	'twitter',
+	'youtube',
+	'instagram'
+	]
+%}
+
+<div class="footer-social">
+	{% for item in items %}
+	<a href="#" class="footer-social__link">
+		<i class="fa fa-{{ item }}" aria-hidden="true"></i>
+	</a>
+	{% endfor %}
+</div>
+<!-- /.footer-social -->

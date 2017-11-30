@@ -1,0 +1,19 @@
+{% set items = [
+	'Пункт 1',
+	'Пункт 2',
+	'Пункт 3'
+	]
+%}
+
+<nav class="menu-footer">
+	<ul class="menu-footer__list">
+		{% for item in items %}
+		<li class="menu-footer__item">
+			<a href="#" class="menu-footer__link">{{ item }}</a>
+		</li>
+		<!-- /.menu-footer__item -->
+		{% endfor %}
+	</ul>
+	<!-- /.menu-footer__list -->
+</nav>
+<!-- /.menu-footer -->
