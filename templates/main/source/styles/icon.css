@@ -8,8 +8,8 @@
 	}
 
 	&_auth {
-		background: url(auth.svg?size=34&color=000000);
-		height: 34px;
-		width: 34px;
+		background: url(./templates/main/source/svg/icons/basket__plus.svg);
+		height: 15px;
+		width: 15px;
 	}
 }

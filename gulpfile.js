@@ -75,7 +75,7 @@ gulp.task('css', () => {
 			removeFill: true
 		}),
 		imageInliner({
-			assetPaths: ["https://icongr.am"]
+			assetPaths: ["https://icongr.am","./templates/main/source/svg/icons/"]
 		}),
 		svgo,
 		cssnano
