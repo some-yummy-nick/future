@@ -2,15 +2,38 @@
 <html lang="ru">
 <head>
 
-	<title>Example</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Example</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<meta name="HandheldFriendly" content="True">
-	<meta name="format-detection" content="telephone=yes">
-	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style>
+				@font-face {
+						font-family: "Geometria";
+						src: url('css/fonts/Geometria/Geometria.woff2') format('woff2'),
+						url('css/fonts/Geometria/Geometria.woff') format('woff'),
+						url('css/fonts/Geometria/Geometria.ttf') format('truetype');
+						font-weight: normal;
+						font-style: normal;
+						font-display: optional;
+				}
 
+				.font-marketsans .geometria {
+						font-family: "Geometria", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif
+				}
+		</style><!--загрузка кастомных шрифтов -->
+
+		<script>
+		var useCustomFont = ('fontDisplay' in document.documentElement.style) ||
+		  (localStorage && localStorage.getItem('ebay-font'));
+		if (useCustomFont) {
+			document.documentElement.classList.add('font-marketsans');
+		}
+		</script><!--загрузка кастомных шрифтов -->
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>

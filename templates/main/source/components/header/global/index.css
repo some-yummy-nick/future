@@ -2,6 +2,7 @@
 	width: 100%;
 	min-width: 1200px;
 	margin-bottom: 29px;
+	background: rgba(153, 221, 153, 0.8);
 
 	@media (--phone) {
 		min-width: 320px;
