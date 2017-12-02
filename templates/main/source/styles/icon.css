@@ -6,4 +6,10 @@
 		height: 34px;
 		width: 34px;
 	}
+
+	&_auth {
+		background: url(auth.svg?size=34&color=000000);
+		height: 34px;
+		width: 34px;
+	}
 }

@@ -1,42 +1,42 @@
-	{% include 'head/index.html' %}
+ {% include 'head/index.html' %}
 
-	<body>
+<body>
 
-		<div class="wrapper" id="js-wrapper">
+	<div class="wrapper" id="js-wrapper">
 
-			{% include 'header/global/index.html' %}
+		{% include 'header/global/index.html' %}
 
-			<div class="middle">
-				<div class="middle__container">
+		<div class="middle">
+			<div class="middle__container">
 
-					<div class="content">
-						<!-- WORKAREA -->
+				<div class="content">
+					<!-- WORKAREA -->
 
-						{% include 'breadcrumbs/index.html' %}
+					{% include 'breadcrumbs/index.html' %}
 
-						<div class="title">Навигация</div>
+					<div class="title">Навигация</div>
 
-						{% include 'checkbox/index.html' %}
+					{% include 'checkbox/index.html' %} {% include 'pagination/index.html' %}
 
-						{% include 'pagination/index.html' %}
+					<div class="icon icon_ambulance"></div>
 
-						<div class="icon icon_ambulance"></div>
+					<div class="icon icon_auth"></div>
+					<!-- /.icon icon_auth -->
 
-						<!-- END WORKAREA -->
-					</div>
-					<!-- /.content -->
-
+					<!-- END WORKAREA -->
 				</div>
-				<!-- /.middle__container -->
+				<!-- /.content -->
+
 			</div>
-			<!-- /.middle -->
-
+			<!-- /.middle__container -->
 		</div>
-		<!-- /.wrapper -->
+		<!-- /.middle -->
 
-		{% include 'footer/global/index.html' %}
-		{% include 'connect/script.html' %}
-		{% include 'connect/stylesheet.html' %}
+	</div>
+	<!-- /.wrapper -->
 
-	</body>
+	{% include 'footer/global/index.html' %} {% include 'connect/script.html' %} {% include 'connect/stylesheet.html' %}
+
+</body>
+
 </html>
