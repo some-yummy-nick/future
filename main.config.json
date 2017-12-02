@@ -1,65 +1,86 @@
-
 {
-  "config": {
-    "src": {
-      "server": "./templates/main/dev/",
-      "dev": {
-        "dest": "./templates/main/dev/",
-        "files": "./templates/main/dev/**/*",
-        "js": {
-          "dest": "./templates/main/dev/js/"
-        },
-        "css": {
-          "dest": "./templates/main/dev/css/"
-        },
-        "fonts": {
-          "dest": "./templates/main/dev/css/fonts/"
-        },
-        "images": {
-          "dest": "./templates/main/dev/images/"
-        },
-        "ajax": {
-          "dest": "./templates/main/dev/ajax/"
-        }
-      },
-      "build": {
-        "dest": "./templates/main/build/"
-      },
-      "source": {
-        "js": {
-          "copy": ["./templates/main/source/js/libs/jquery-3.2.1.min.js", "./templates/main/source/js/users/map.js"],
-          "dest": ["./templates/main/source/js/**/*.js", "!./templates/main/source/js/libs/jquery-3.2.1.min.js", "!./templates/main/source/js/users/map.js"]
-        },
-        "svg": {
-          "dest": "./templates/main/source/svg/icons/"
-        },
-        "css": {
-          "dest": "./templates/main/source/styles/style.css"
-        },
-        "html": {
-          "dest": "./templates/main/source/pages/*.html"
-        },
-        "components": "./templates/main/source/components/",
-        "fonts": {
-          "dest": "./templates/main/source/fonts/**/*"
-        },
-        "images": {
-          "dest": "./templates/main/source/images/**/*"
-        },
-        "ajax": {
-          "dest": "./templates/main/source/ajax/*.html"
-        }
-      },
-      "watch": {
-        "html": ["./templates/main/source/pages/*.html", "./templates/main/source/components/**/*.html"],
-        "ajax": ["./templates/main/source/ajax/*.html", "./templates/main/source/components/**/*.html"],
-        "css":["./templates/main/source/components/**/*.css", "./templates/main/source/styles/style.css", "./templates/main/source/styles/**/*.css", "./templates/main/source/js/"],
-        "js":["./templates/main/source/js/**/*.js"],
-        "images": ["./templates/main/source/images/**/*"]
-      }
-    },
-    "compress": {
-      "js": false
-    }
-  }
+	"config": {
+		"src": {
+			"server": "./templates/main/dev/",
+			"dev": {
+				"dest": "./templates/main/dev/",
+				"files": "./templates/main/dev/**/*",
+				"js": {
+					"dest": "./templates/main/dev/js/"
+				},
+				"css": {
+					"dest": "./templates/main/dev/css/"
+				},
+				"fonts": {
+					"dest": "./templates/main/dev/css/fonts/"
+				},
+				"images": {
+					"dest": "./templates/main/dev/images/"
+				},
+				"ajax": {
+					"dest": "./templates/main/dev/ajax/"
+				}
+			},
+			"build": {
+				"dest": "./templates/main/build/"
+			},
+			"source": {
+				"js": {
+					"copy": [
+						"./templates/main/source/js/libs/jquery-3.2.1.min.js",
+						"./templates/main/source/js/users/map.js"
+					],
+					"dest": [
+						"./templates/main/source/js/**/*.js",
+						"!./templates/main/source/js/libs/jquery-3.2.1.min.js",
+						"!./templates/main/source/js/users/map.js"
+					]
+				},
+				"svg": {
+					"dest": "./templates/main/source/svg/icons/"
+				},
+				"css": {
+					"dest": "./templates/main/source/styles/style.css"
+				},
+				"html": {
+					"dest": "./templates/main/source/pages/*.html"
+				},
+				"components": "./templates/main/source/components/",
+				"fonts": {
+					"dest": "./templates/main/source/fonts/**/*"
+				},
+				"images": {
+					"dest": "./templates/main/source/images/**/*"
+				},
+				"ajax": {
+					"dest": "./templates/main/source/ajax/*.html"
+				}
+			},
+			"watch": {
+				"html": [
+					"./templates/main/source/pages/*.html",
+					"./templates/main/source/components/**/*.html"
+				],
+				"ajax": [
+					"./templates/main/source/ajax/*.html",
+					"./templates/main/source/components/**/*.html"
+				],
+				"css": [
+					"./templates/main/source/components/**/*.css",
+					"./templates/main/source/styles/style.css",
+					"./templates/main/source/styles/**/*.css",
+					"./templates/main/source/js/"
+				],
+				"js": [
+					"./templates/main/source/js/**/*.js"
+				],
+				"images": [
+					"./templates/main/source/images/**/*"
+				]
+			}
+		},
+		"compress": {
+			"js": false
+		}
+	}
 }
