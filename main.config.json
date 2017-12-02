@@ -1,4 +1,3 @@
-
 {
 	"config": {
 		"src": {
@@ -27,8 +26,15 @@
 			},
 			"source": {
 				"js": {
-					"copy": ["./templates/main/source/js/libs/jquery-3.2.1.min.js", "./templates/main/source/js/users/map.js"],
-					"dest": ["./templates/main/source/js/**/*.js", "!./templates/main/source/js/libs/jquery-3.2.1.min.js", "!./templates/main/source/js/users/map.js"]
+					"copy": [
+						"./templates/main/source/js/libs/jquery-3.2.1.min.js",
+						"./templates/main/source/js/users/map.js"
+					],
+					"dest": [
+						"./templates/main/source/js/**/*.js",
+						"!./templates/main/source/js/libs/jquery-3.2.1.min.js",
+						"!./templates/main/source/js/users/map.js"
+					]
 				},
 				"svg": {
 					"dest": "./templates/main/source/svg/icons/"
@@ -51,11 +57,26 @@
 				}
 			},
 			"watch": {
-				"html": ["./templates/main/source/pages/*.html", "./templates/main/source/components/**/*.html"],
-				"ajax": ["./templates/main/source/ajax/*.html", "./templates/main/source/components/**/*.html"],
-				"css":["./templates/main/source/components/**/*.css", "./templates/main/source/styles/style.css", "./templates/main/source/styles/**/*.css", "./templates/main/source/js/"],
-				"js":["./templates/main/source/js/**/*.js"],
-				"images": ["./templates/main/source/images/**/*"]
+				"html": [
+					"./templates/main/source/pages/*.html",
+					"./templates/main/source/components/**/*.html"
+				],
+				"ajax": [
+					"./templates/main/source/ajax/*.html",
+					"./templates/main/source/components/**/*.html"
+				],
+				"css": [
+					"./templates/main/source/components/**/*.css",
+					"./templates/main/source/styles/style.css",
+					"./templates/main/source/styles/**/*.css",
+					"./templates/main/source/js/"
+				],
+				"js": [
+					"./templates/main/source/js/**/*.js"
+				],
+				"images": [
+					"./templates/main/source/images/**/*"
+				]
 			}
 		},
 		"compress": {
