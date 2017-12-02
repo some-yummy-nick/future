@@ -47,7 +47,7 @@ gulp.task('js', () => {
 		.pipe(gulp.dest(config.src.dev.js.dest))
 		.on('end', browserSync.reload);
 
-	gulp.src(config.src.source.js.jquery)
+	gulp.src(config.src.source.js.copy)
 		.pipe(gulp.dest(config.src.dev.js.dest));
 
 });
@@ -141,6 +141,11 @@ gulp.task('fonts', () => {
 gulp.task('images', function () {
 
 	return gulp.src(config.src.source.images.dest)
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
 		.pipe(plugins.cache(plugins.imagemin([
 			plugins.imagemin.gifsicle({
 				interlaced: true
