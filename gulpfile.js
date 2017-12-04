@@ -33,7 +33,7 @@ gulp.task('build', () => {
 
 gulp.task('js', () => {
 
-	gulp.src(config.src.source.js.dest)
+	gulp.src(config.src.source.js.src)
 	  .pipe(plugins.plumber({
 		  errorHandler: (err) => {
 			  console.log(err)
@@ -75,13 +75,13 @@ gulp.task('css', () => {
 			removeFill: true
 		}),
 		imageInliner({
-			assetPaths: ["https://icongr.am","./templates/main/source/svg/icons/"]
+			assetPaths: ['https://icongr.am']
 		}),
 		svgo,
 		cssnano
 	];
 
-	return gulp.src(config.src.source.css.dest)
+	return gulp.src(config.src.source.css.src)
 	  .pipe(plugins.plumber({
 		  errorHandler: (err) => {
 			  console.log(err)
@@ -103,7 +103,7 @@ var configHtml = {
 }
 
 gulp.task('ajax', () => {
-	return gulp.src(config.src.source.ajax.dest)
+	return gulp.src(config.src.source.ajax.src)
 	  .pipe(plugins.plumber({
 		  errorHandler: (err) => {
 			  console.log(err)
@@ -118,7 +118,7 @@ gulp.task('ajax', () => {
 });
 
 gulp.task('nunjucks', () => {
-	return gulp.src(config.src.source.html.dest)
+	return gulp.src(config.src.source.html.src)
 	  .pipe(plugins.plumber({
 		  errorHandler: (err) => {
 			  console.log(err)
@@ -134,13 +134,18 @@ gulp.task('nunjucks', () => {
 });
 
 gulp.task('fonts', () => {
-	return gulp.src(config.src.source.fonts.dest)
-	  .pipe(gulp.dest(config.src.dev.fonts.dest));
+	return gulp.src(config.src.source.fonts.src)
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+	  	.pipe(gulp.dest(config.src.dev.fonts.dest));
 });
 
-gulp.task('images', function () {
+gulp.task('images', () => {
 
-	return gulp.src(config.src.source.images.dest)
+	return gulp.src(config.src.source.images.src)
 	  .pipe(plugins.plumber({
 		  errorHandler: (err) => {
 			  console.log(err)
@@ -162,6 +167,17 @@ gulp.task('images', function () {
 	  ])))
 	  .pipe(gulp.dest(config.src.dev.images.dest))
 	  .on('end', browserSync.reload);
+});
+
+gulp.task('svg', () => {
+	return gulp.src(config.src.source.svg.src)
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+		.pipe(plugins.cache(plugins.svgmin()))
+		.pipe(gulp.dest(config.src.source.svg.dest));
 });
 
 gulp.task('watch:nunjucks', () => {
@@ -209,6 +225,9 @@ gulp.task('watch', () => {
 	});
 	plugins.watch(config.src.watch.images, () => {
 		gulp.start('images');
+	});
+	plugins.watch(config.src.source.svg.src, () => {
+		gulp.start('svg');
 	});
 });
 

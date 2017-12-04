@@ -8,7 +8,7 @@
 	}
 
 	&_auth {
-		background: url(./templates/main/source/svg/icons/basket__plus.svg);
+		background: svg-load(auth.svg, fill: #c70000) no-repeat;
 		height: 15px;
 		width: 15px;
 	}
