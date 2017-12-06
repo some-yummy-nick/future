@@ -24,31 +24,39 @@ gulp.task('webserver', () => {
 });
 
 // build project
+gulp.task('clean:build', () => {
+	return gulp.src(config.src.build.dest)
+		.pipe(plugins.rimraf());
+});
+
 gulp.task('build', () => {
 
+	gulp.start('clean:build');
+
 	gulp.src(config.src.dev.files)
-	  .pipe(gulp.dest(config.src.build.dest))
+		.pipe(gulp.dest(config.src.build.dest))
+
 
 });
 
 gulp.task('js', () => {
 
 	gulp.src(config.src.source.js.src)
-	  .pipe(plugins.plumber({
-		  errorHandler: (err) => {
-			  console.log(err)
-		  }
-	  }))
-	  .pipe(plugins.sourcemaps.init())
-	  .pipe(plugins.concat('script.js'))
-	  .pipe(plugins.rename('script.min.js'))
-	  .pipe(plugins.if(config.compress.js, plugins.uglify()))
-	  .pipe(plugins.sourcemaps.write('.'))
-	  .pipe(gulp.dest(config.src.dev.js.dest))
-	  .on('end', browserSync.reload);
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.concat('script.js'))
+		.pipe(plugins.rename('script.min.js'))
+		.pipe(plugins.if(config.compress.js, plugins.uglify()))
+		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(gulp.dest(config.src.dev.js.dest))
+		.on('end', browserSync.reload);
 
 	gulp.src(config.src.source.js.copy)
-	  .pipe(gulp.dest(config.src.dev.js.dest));
+		.pipe(gulp.dest(config.src.dev.js.dest));
 
 });
 
@@ -78,20 +86,22 @@ gulp.task('css', () => {
 			assetPaths: ['https://icongr.am']
 		}),
 		svgo,
-		cssnano
+		cssnano({
+			'zindex': false
+		})
 	];
 
 	return gulp.src(config.src.source.css.src)
-	  .pipe(plugins.plumber({
-		  errorHandler: (err) => {
-			  console.log(err)
-		  }
-	  }))
-	  .pipe(plugins.sourcemaps.init())
-	  .pipe(plugins.postcss(processors))
-	  .pipe(plugins.sourcemaps.write('.'))
-	  .pipe(gulp.dest(config.src.dev.css.dest))
-	  .on('end', browserSync.reload);
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.postcss(processors))
+		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(gulp.dest(config.src.dev.css.dest))
+		.on('end', browserSync.reload);
 });
 
 var configHtml = {
@@ -104,32 +114,32 @@ var configHtml = {
 
 gulp.task('ajax', () => {
 	return gulp.src(config.src.source.ajax.src)
-	  .pipe(plugins.plumber({
-		  errorHandler: (err) => {
-			  console.log(err)
-		  }
-	  }))
-	  .pipe(plugins.nunjucksRender({
-		  path: [config.src.source.components]
-	  }))
-	  .pipe(plugins.htmlPrettify(configHtml))
-	  .pipe(gulp.dest(config.src.dev.ajax.dest))
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+		.pipe(plugins.nunjucksRender({
+			path: [config.src.source.components]
+		}))
+		.pipe(plugins.htmlPrettify(configHtml))
+		.pipe(gulp.dest(config.src.dev.ajax.dest))
 
 });
 
 gulp.task('nunjucks', () => {
 	return gulp.src(config.src.source.html.src)
-	  .pipe(plugins.plumber({
-		  errorHandler: (err) => {
-			  console.log(err)
-		  }
-	  }))
-	  .pipe(plugins.nunjucksRender({
-		  path: [config.src.source.components]
-	  }))
-	  .pipe(plugins.htmlPrettify(configHtml))
-	  .pipe(gulp.dest(config.src.dev.dest))
-	  .on('end', browserSync.reload);
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+		.pipe(plugins.nunjucksRender({
+			path: [config.src.source.components]
+		}))
+		.pipe(plugins.htmlPrettify(configHtml))
+		.pipe(gulp.dest(config.src.dev.dest))
+		.on('end', browserSync.reload);
 
 });
 
@@ -140,33 +150,33 @@ gulp.task('fonts', () => {
 				console.log(err)
 			}
 		}))
-	  	.pipe(gulp.dest(config.src.dev.fonts.dest));
+		.pipe(gulp.dest(config.src.dev.fonts.dest));
 });
 
 gulp.task('images', () => {
 
 	return gulp.src(config.src.source.images.src)
-	  .pipe(plugins.plumber({
-		  errorHandler: (err) => {
-			  console.log(err)
-		  }
-	  }))
-	  .pipe(plugins.cache(plugins.imagemin([
-		  plugins.imagemin.gifsicle({
-			  interlaced: true
-		  }),
-		  MozJpeg({
-			  quality: 90
-		  }),
-		  plugins.imagemin.optipng({
-			  optimizationLevel: 5
-		  }),
-		  plugins.imagemin.svgo({
-			  plugins: [{removeViewBox: true}]
-		  })
-	  ])))
-	  .pipe(gulp.dest(config.src.dev.images.dest))
-	  .on('end', browserSync.reload);
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+		.pipe(plugins.cache(plugins.imagemin([
+			plugins.imagemin.gifsicle({
+				interlaced: true
+			}),
+			MozJpeg({
+				quality: 90
+			}),
+			plugins.imagemin.optipng({
+				optimizationLevel: 5
+			}),
+			plugins.imagemin.svgo({
+				plugins: [{removeViewBox: true}]
+			})
+		])))
+		.pipe(gulp.dest(config.src.dev.images.dest))
+		.on('end', browserSync.reload);
 });
 
 gulp.task('svg', () => {
@@ -232,4 +242,4 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['watch', 'webserver']);
-gulp.task('dev', ['js', 'nunjucks', 'css', 'ajax', 'fonts']);
+gulp.task('dev', ['svg', 'js', 'nunjucks', 'css', 'ajax', 'fonts', 'images']);

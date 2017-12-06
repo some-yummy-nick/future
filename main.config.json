@@ -51,7 +51,10 @@
 					"src": "./templates/main/source/fonts/**/*"
 				},
 				"images": {
-					"src": "./templates/main/source/images/*.+(jpg|png|jpeg|gif|svg)"
+					"src": [
+						"./templates/main/source/images/**/*.+(jpg|png|jpeg|gif|svg)",
+						"!./templates/main/source/images/svg-icons/**/*.svg"
+					]
 				},
 				"ajax": {
 					"src": "./templates/main/source/ajax/*.html"
