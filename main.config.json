@@ -38,10 +38,14 @@
 				},
 				"svg": {
 					"src": "./templates/main/source/images/svg-icons/*.svg",
-					"dest": "./templates/main/source/svg/icons/"
+					"dest": "./templates/main/source/svg/icons/",
+					"sprite": {
+						"src": "./templates/main/source/images/svg-sprites/*.svg",
+						"dest": "./templates/main/source/svg/sprites/"
+					}
 				},
 				"css": {
-					"src": "./templates/main/source/styles/style.css"
+					"src": "./templates/main/source/styles/style.scss"
 				},
 				"html": {
 					"src": "./templates/main/source/pages/*.html"
@@ -70,9 +74,9 @@
 					"./templates/main/source/components/**/*.html"
 				],
 				"css": [
-					"./templates/main/source/components/**/*.css",
-					"./templates/main/source/styles/style.css",
-					"./templates/main/source/styles/**/*.css",
+					"./templates/main/source/components/**/*.scss",
+					"./templates/main/source/styles/style.scss",
+					"./templates/main/source/styles/**/*.scss",
 					"./templates/main/source/js/"
 				],
 				"js": [
