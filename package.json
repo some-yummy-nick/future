@@ -44,7 +44,9 @@
     "postcss-svgo": "^2.1.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp",
+    "dev": "gulp dev"
   },
   "author": "",
   "license": "ISC"
