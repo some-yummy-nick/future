@@ -1,24 +1,21 @@
-<div class="header">
+<header class="header geometria">
+	<div class="container">
+		<div class="header__blocks">
+			<div class="header__block">
+				{% include 'logo/global/logo.html' %}
+			</div>
+			<div class="header__block header__block_wide">
+				<button class="hamburger" id="js-hamburger" aria-expanded="false">
+					<span
+						class="hamburger__screen-reader-text">Меню</span>
 
-	<div class="header__top">
-		<div class="header__inner">
+				</button>
+				{% include 'menu/header/menu.html' %}
+			</div>
+			<div class="header__block header__block_mobile">
+				{% include 'social/social.html' %}
 
-			{% include 'logo/global/logo.html' %}
-
+			</div>
 		</div>
-		<!-- /.header__inner -->
 	</div>
-	<!-- /.header__top -->
-
-	<div class="header__bottom">
-		<div class="header__inner header__inner_bottom">
-
-			{% include 'menu/header/menu.html' %}
-
-		</div>
-		<!-- /.header__inner -->
-	</div>
-	<!-- /.header__bottom -->
-
-</div>
-<!-- /.header -->
+</header>

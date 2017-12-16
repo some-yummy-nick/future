@@ -1,0 +1,71 @@
+:root {
+	--hamburger-color: #000;
+	--hamburger-width: 40px;
+	--hamburger-height: 20px;
+	--hamburger-height-line: 2px;
+}
+
+.hamburger {
+	position: relative;
+	display: none;
+	width: var(--hamburger-width);
+	height: var(--hamburger-height);
+	border: none;
+	border-radius: 0;
+	background: none;
+	color: #fff;
+	cursor: pointer;
+	padding: 1em;
+	text-transform: uppercase;
+	transition: all 0.25s ease-in-out;
+	font-size: 0.875em;
+
+	&:focus {
+		outline: thin dotted;
+		outline-offset: -2px;
+	}
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		height: var(--hamburger-height-line);
+		width: 100%;
+		top: calc(var(--hamburger-height) / 2);
+		left: 0;
+		background-color: var(--hamburger-color);
+		transition: all 0.3s;
+	}
+	&::after {
+		box-shadow: 0 calc(var(--hamburger-height) / 2) 0 0 var(--hamburger-color),
+		0 calc(var(--hamburger-height) / -2) 0 0 var(--hamburger-color);
+	}
+
+	/* Text meant only for screen readers. */
+	&__screen-reader-text {
+		clip: rect(1px, 1px, 1px, 1px);
+		position: absolute !important;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+
+	&.opened {
+		&::after {
+			transform: rotate(45deg);
+			box-shadow: none;
+		}
+		&::before {
+			transform: rotate(-45deg);
+		}
+	}
+
+	@media(max-width: 768px) {
+		display: inline-block;
+	}
+
+	@media (max-width: 480px) {
+		--hamburger-width: 30px;
+		--hamburger-height: 15px;
+	}
+}
+
