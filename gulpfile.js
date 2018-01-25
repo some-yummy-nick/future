@@ -15,6 +15,7 @@ var configWebserver = {
 	server: {
 		baseDir: config.src.server
 	},
+	notify: false,
 	open: false,
 	host: 'localhost',
 	logPrefix: 'FrontEnd Builder'
@@ -68,8 +69,11 @@ gulp.task('css', () => {
 	var svgo = require('postcss-svgo');
 	var cssnext = require('postcss-cssnext');
 	var imageInliner = require('postcss-image-inliner');
+	var cssVariables = require('postcss-css-variables');
+	var rgbPlz = require('postcss-rgb-plz');
 
 	var processors = [
+		cssVariables,
 		cssnext,
 		inlineSvg({
 			path: config.src.source.svg.dest,
@@ -79,6 +83,7 @@ gulp.task('css', () => {
 			assetPaths: ['https://icongr.am']
 		}),
 		svgo,
+		rgbPlz,
 		mqPacker,
 		cssnano({
 			'zindex': false

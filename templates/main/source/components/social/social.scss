@@ -1,0 +1,51 @@
+.social{
+
+	&__list{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: middle;
+		height: 30px;
+		width: 30px;
+	}
+
+	&__link{
+		display: block;
+		height: 100%;
+		text-indent: -9999px;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&_vk{
+			background-image: url('https://icongr.am/simple/vk.svg');
+
+			&:hover{
+				background-image: url('https://icongr.am/simple/vk.svg?colored');
+			}
+		}
+
+		&_fb{
+			background-image: url('https://icongr.am/simple/facebook.svg');
+
+			&:hover{
+				background-image: url('https://icongr.am/simple/facebook.svg?colored');
+			}
+		}
+
+		&_youtube{
+			background-image: url('https://icongr.am/simple/youtube.svg');
+
+			&:hover{
+				background-image: url('https://icongr.am/simple/youtube.svg?colored');
+			}
+		}
+	}
+
+	@media(max-width: 480px) {
+		display: none;
+	}
+}

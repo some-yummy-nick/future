@@ -1,31 +1,28 @@
 .header {
-	width: 100%;
-	min-width: 1200px;
-	margin-bottom: 29px;
-	background: rgba(153, 221, 153, 0.8);
+	position: relative;
+	padding-top: 20px;
 
-	@media (--phone) {
-		min-width: 320px;
+	&__blocks {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
-	&__top {
-		padding: 0 15px;
-		height: 89px;
-	}
+	&__block {
 
-	&__inner {
-		margin: 0 auto;
-		max-width: 1170px;
-		height: 100%;
-
-		&_bottom {
-
+		&_wide {
+			flex-grow: 1;
 		}
 	}
 
-	&__bottom {
-		padding: 0 15px;
-		height: 48px;
-		background-color: #0092d4;
+	@media(max-width:768px) {
+
+		&__block {
+
+			&_wide {
+				order: 1;
+				flex-grow: inherit;
+			}
+		}
 	}
 }

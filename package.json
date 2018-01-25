@@ -38,9 +38,11 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.1",
     "imagemin-svgo": "^6.0.0",
+    "postcss-css-variables": "^0.8.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-image-inliner": "^1.0.6",
     "postcss-inline-svg": "^3.0.0",
+    "postcss-rgb-plz": "^2.0.2",
     "postcss-svgo": "^2.1.6"
   },
   "scripts": {

@@ -1,5 +1,4 @@
 .logo {
-	padding-top: 20px;
 
 	&__link {
 		text-decoration: none;
@@ -9,5 +8,6 @@
 	&__pic {
 		display: block;
 		margin: 0 auto;
+		max-width: 100%;
 	}
 }

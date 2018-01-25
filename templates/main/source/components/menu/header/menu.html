@@ -1,26 +1,21 @@
 {% set items = [
-		'Пункт 1',
-		'Пункт 2',
-		'Пункт 3',
-		'Пункт 4',
-		'Пункт 5'
+		'Продукты',
+		'Корзина',
+		'Доставка',
+		'Руководство',
+		'Контакты'
 	]
 %}
 
-<nav class="menu">
-	<div class="menu__burger" id="js-menu__burger">
-		<span></span>
-	</div>
-	<div class="menu__inner">
+<div class="menu" id="js-menu" aria-expanded="false">
+	<nav>
 		<ul class="menu__list">
 			{% for item in items %}
 			<li class="menu__item">
 				<a href="#" class="menu__link">{{ item }}</a>
 			</li>
-			<!-- /.menu__item -->
 			{% endfor %}
 		</ul>
-		<!-- /.menu__list -->
-	</div>
-</nav>
-<!-- /.menu -->
+	</nav>
+</div>
+<!--end menu-->
