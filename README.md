@@ -5,33 +5,30 @@
 	gulp
 </p>
 <p>
-	gulp dev
-</p>
-<p>
 	gulp build
 </p>
 <br>
 <p>
-	/mockup/templates/main/ajax/
+	/mockup/templates/main/source/ajax/
 </p>
 <p>
-	/mockup/templates/main/components/
+	/mockup/templates/main/source/components/
 </p>
 <p>
-	/mockup/templates/main/fonts
+	/mockup/templates/main/source/fonts
 </p>
 <p>
-	/mockup/templates/main/images/
+	/mockup/templates/main/source/images/
 </p>
 <p>
-	/mockup/templates/main/js/
+	/mockup/templates/main/source/js/
 </p>
 <p>
-	/mockup/templates/main/pages - тут лежат все страницы, которые собираем
+	/mockup/templates/main/source/pages - тут лежат все страницы, которые собираем
 </p>
 <p>
-	/mockup/templates/main/styles/
+	/mockup/templates/main/source/styles/
 </p>
 <p>
-	/mockup/templates/main/svg/icons/
+	/mockup/templates/main/source/svg/icons/
 </p>
