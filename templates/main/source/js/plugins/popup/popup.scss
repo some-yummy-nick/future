@@ -17,6 +17,10 @@
 	background: rgba(24, 17, 34, 0.7);
 	transition: opacity 500ms;
 
+	&_ie10 {
+		display: none;
+	}
+
 	&_dopclass {
 		position: absolute;
 		overflow: visible;
@@ -25,6 +29,7 @@
 	&_active {
 		opacity: 1;
 		pointer-events: auto;
+		display: block;
 	}
 
 	&__overlay {
@@ -55,7 +60,8 @@
 		text-align: left;
 		position: relative;
 		background: #fff;
-		box-shadow: 1px 1px 5px 2px #555;
+		border-radius: 5px;
+		overflow: hidden;
 	}
 
 	&_dopclass &__block {
@@ -72,7 +78,6 @@
 			top: 21px;
 			content: '';
 		}
-
 	}
 
 	&__close {
@@ -85,8 +90,8 @@
 		cursor: pointer;
 		z-index: 2;
 
-		&:before,
-		&:after {
+		&:after,
+		&:before {
 			position: absolute;
 			left: 50%;
 			margin: -1px 0 0 -10px;
@@ -105,7 +110,6 @@
 		&:after {
 			transform: rotate(45deg);
 		}
-
 	}
 
 	&_active &__close {
@@ -120,7 +124,6 @@
 		& > div {
 			display: block;
 		}
-
 	}
 
 	&__body_hidden {
@@ -131,5 +134,4 @@
 		-ms-overflow-scrolling: auto;
 		overflow-scrolling: auto;
 	}
-
 }

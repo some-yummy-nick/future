@@ -1,39 +1,40 @@
 {
 	"config": {
 		"src": {
-			"server": "./templates/main/dev/",
-			"dev": {
-				"dest": "./templates/main/dev/",
-				"files": "./templates/main/dev/**/*",
+			"server": "./templates/main/build/",
+			"build": {
+				"dest": "./templates/main/build/",
+				"files": "./templates/main/build/**/*",
 				"js": {
-					"dest": "./templates/main/dev/js/"
+					"dest": "./templates/main/build/js/"
 				},
 				"css": {
-					"dest": "./templates/main/dev/css/"
+					"dest": "./templates/main/build/css/"
 				},
 				"fonts": {
-					"dest": "./templates/main/dev/css/fonts/"
+					"dest": "./templates/main/build/css/fonts/"
 				},
 				"images": {
-					"dest": "./templates/main/dev/images/"
+					"dest": "./templates/main/build/images/"
 				},
 				"ajax": {
-					"dest": "./templates/main/dev/ajax/"
+					"dest": "./templates/main/build/ajax/"
 				}
-			},
-			"build": {
-				"dest": "./templates/main/build/"
 			},
 			"source": {
 				"js": {
 					"copy": [
 						"./templates/main/source/js/libs/jquery-3.2.1.min.js",
-						"./templates/main/source/js/users/map.js"
+						"./templates/main/source/js/users/map.js",
+						"./templates/main/source/js/libs/jquery-ui-1.12.1.custom/jquery-ui.min.js",
+						"./templates/main/source/js/users/frontend-works.js"
 					],
 					"src": [
 						"./templates/main/source/js/**/*.js",
 						"!./templates/main/source/js/libs/jquery-3.2.1.min.js",
-						"!./templates/main/source/js/users/map.js"
+						"!./templates/main/source/js/users/map.js",
+						"!./templates/main/source/js/libs/jquery-ui-1.12.1.custom/jquery-ui.min.js",
+						"!./templates/main/source/js/users/frontend-works.js"
 					]
 				},
 				"svg": {
@@ -77,7 +78,7 @@
 					"./templates/main/source/components/**/*.scss",
 					"./templates/main/source/styles/style.scss",
 					"./templates/main/source/styles/**/*.scss",
-					"./templates/main/source/js/"
+					"./templates/main/source/js/**/*.scss"
 				],
 				"js": [
 					"./templates/main/source/js/**/*.js"

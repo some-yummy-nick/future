@@ -39,14 +39,10 @@ $(document).ready(function () {
 	// 	}
 	// });
 
-	// $(".js-catalog-tumb").setEqualHeight();
-	// $(".js-catalog-mosaic__photo").setEqualHeight();
-	// $('#js-catalog-list-popular').setEqualHeight({itemsSel: '.js-equal-height-photo', itemsInLineCount: 4});
-
-	$(document).on('click', '[data-ajax]', function(e) {
+	$(document).on('click', '[data-ajax]', function (e) {
 		e.stopPropagation();
 		e.preventDefault();
-		$.get(this.getAttribute('data-url'), function(response) {
+		$.get(this.getAttribute('data-url'), function (response) {
 			globalPopup.html(response).show();
 		});
 	});

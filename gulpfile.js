@@ -15,7 +15,6 @@ var configWebserver = {
 	server: {
 		baseDir: config.src.server
 	},
-	notify: false,
 	open: false,
 	host: 'localhost',
 	logPrefix: 'FrontEnd Builder'
@@ -23,22 +22,6 @@ var configWebserver = {
 
 gulp.task('webserver', () => {
 	browserSync.init(configWebserver);
-});
-
-// build project
-
-gulp.task('clean:build', () => {
-	return gulp.src(config.src.build.dest)
-		.pipe(plugins.rimraf());
-});
-
-gulp.task('build', () => {
-
-	gulp.start('clean:build');
-
-	gulp.src(config.src.dev.files)
-		.pipe(gulp.dest(config.src.build.dest))
-
 });
 
 gulp.task('js', () => {
@@ -54,11 +37,11 @@ gulp.task('js', () => {
 		.pipe(plugins.rename('script.min.js'))
 		.pipe(plugins.if(config.compress.js, plugins.uglify()))
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(config.src.dev.js.dest))
+		.pipe(gulp.dest(config.src.build.js.dest))
 		.on('end', browserSync.reload);
 
 	gulp.src(config.src.source.js.copy)
-		.pipe(gulp.dest(config.src.dev.js.dest));
+		.pipe(gulp.dest(config.src.build.js.dest));
 
 });
 
@@ -69,11 +52,8 @@ gulp.task('css', () => {
 	var svgo = require('postcss-svgo');
 	var cssnext = require('postcss-cssnext');
 	var imageInliner = require('postcss-image-inliner');
-	var cssVariables = require('postcss-css-variables');
-	var rgbPlz = require('postcss-rgb-plz');
 
 	var processors = [
-		cssVariables,
 		cssnext,
 		inlineSvg({
 			path: config.src.source.svg.dest,
@@ -83,8 +63,9 @@ gulp.task('css', () => {
 			assetPaths: ['https://icongr.am']
 		}),
 		svgo,
-		rgbPlz,
-		mqPacker,
+		mqPacker({
+			sort: sortMediaQueries
+		}),
 		cssnano({
 			'zindex': false
 		})
@@ -100,8 +81,8 @@ gulp.task('css', () => {
 		.pipe(plugins.sass())
 		.pipe(plugins.postcss(processors))
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(config.src.dev.css.dest))
-		.on('end', browserSync.reload);
+		.pipe(gulp.dest(config.src.build.css.dest))
+		.pipe(browserSync.reload({ stream: true }));
 });
 
 var configHtml = {
@@ -123,7 +104,7 @@ gulp.task('ajax', () => {
 			path: [config.src.source.components]
 		}))
 		.pipe(plugins.htmlPrettify(configHtml))
-		.pipe(gulp.dest(config.src.dev.ajax.dest))
+		.pipe(gulp.dest(config.src.build.ajax.dest))
 
 });
 
@@ -138,7 +119,7 @@ gulp.task('nunjucks', () => {
 			path: [config.src.source.components]
 		}))
 		.pipe(plugins.htmlPrettify(configHtml))
-		.pipe(gulp.dest(config.src.dev.dest))
+		.pipe(gulp.dest(config.src.build.dest))
 		.on('end', browserSync.reload);
 
 });
@@ -150,33 +131,33 @@ gulp.task('fonts', () => {
 				console.log(err)
 			}
 		}))
-	  	.pipe(gulp.dest(config.src.dev.fonts.dest));
+		.pipe(gulp.dest(config.src.build.fonts.dest));
 });
 
 gulp.task('images', () => {
 
 	return gulp.src(config.src.source.images.src)
-	  .pipe(plugins.plumber({
-		  errorHandler: (err) => {
-			  console.log(err)
-		  }
-	  }))
-	  .pipe(plugins.cache(plugins.imagemin([
-				plugins.imagemin.gifsicle({
-					interlaced: true
-				}),
-				MozJpeg({
-					quality: 90
-				}),
-				plugins.imagemin.optipng({
-					optimizationLevel: 5
-				}),
-				plugins.imagemin.svgo({
-					plugins: [{removeViewBox: true}]
-				})
-			])))
-			.pipe(gulp.dest(config.src.dev.images.dest))
-			.on('end', browserSync.reload);
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+		.pipe(plugins.cache(plugins.imagemin([
+			plugins.imagemin.gifsicle({
+				interlaced: true
+			}),
+			MozJpeg({
+				quality: 90
+			}),
+			plugins.imagemin.optipng({
+				optimizationLevel: 5
+			}),
+			plugins.imagemin.svgo({
+				plugins: [{ removeViewBox: true }]
+			})
+		])))
+		.pipe(gulp.dest(config.src.build.images.dest))
+		.on('end', browserSync.reload);
 });
 
 gulp.task('svg', () => {
@@ -203,14 +184,14 @@ var configSvg = {
 };
 
 gulp.task('svgSprite', () => {
-	return gulp.src(config.src.source.svg.sprite.src, {cwd: ''})
+	return gulp.src(config.src.source.svg.sprite.src, { cwd: '' })
 		.pipe(plugins.plumber({
 			errorHandler: (err) => {
 				console.log(err)
 			}
 		}))
 		.pipe(plugins.svgSprite(configSvg))
-				.on('error', function(error){
+		.on('error', function (error) {
 			console.log(error)
 		})
 
@@ -269,4 +250,45 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['watch', 'webserver']);
-gulp.task('dev', ['js', 'nunjucks', 'css', 'ajax', 'fonts', 'images', 'svg']);
+gulp.task('build', ['js', 'nunjucks', 'css', 'ajax', 'fonts', 'images']);
+
+
+function isMax(mq) {
+
+	return /max-width/.test(mq);
+
+}
+
+function isMin(mq) {
+
+	return /min-width/.test(mq);
+
+}
+
+function sortMediaQueries(a, b) {
+
+	let A = a.replace(/\D/g, '');
+
+	let B = b.replace(/\D/g, '');
+
+	if (isMax(a) && isMax(b)) {
+
+		return B - A;
+
+	} else if (isMin(a) && isMin(b)) {
+
+		return A - B;
+
+	} else if (isMax(a) && isMin(b)) {
+
+		return 1;
+
+	} else if (isMin(a) && isMax(b)) {
+
+		return -1;
+
+	}
+
+	return 1;
+
+}
