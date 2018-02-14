@@ -34,7 +34,7 @@
 			justify-content: space-between;
 			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
-			@include clearClearfix;
+			@include clearfix;
 		}
 
 	}

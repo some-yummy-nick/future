@@ -39,14 +39,6 @@ $(document).ready(function () {
 	// 	}
 	// });
 
-	$(document).on('click', '[data-ajax]', function (e) {
-		e.stopPropagation();
-		e.preventDefault();
-		$.get(this.getAttribute('data-url'), function (response) {
-			globalPopup.html(response).show();
-		});
-	});
-
 	hamburger('js-hamburger', "js-menu");
 
 	$("[type=tel]").mask("+7 (999) 999-99-99");

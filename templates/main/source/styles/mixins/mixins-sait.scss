@@ -1,3 +1,85 @@
-@custom-media --phone (width < 768px);
-
+@custom-media --phone (width < 1200px);
+@custom-media --notPhone (width >= 1200px);
 @custom-media --tablet (width >= 768px) and (width <= 1259px);
+@mixin btnBg1($bg:#41ba88, $bgrepeat: no-repeat, $color:#fff, $border: none, $shadow:none, $font-size:14px, $text-transform:uppercase, $font-weight:400, $padding:0 25px, $border-radius:22px, $height:44px, $line-height: $height, $display: inline-block, $bgHov:#41ba88, $shadowHov:0 6px 12px rgba(65, 186, 136, 0.3), $colorHov:#fff, $width: auto) {
+	& {
+		background-color: $bg;
+		background-repeat: $bgrepeat;
+		color: $color;
+		box-shadow: $shadow;
+		text-decoration: none;
+		font-size: $font-size;
+		font-weight: $font-weight;
+		text-transform: $text-transform;
+		padding: $padding;
+		border-radius: $border-radius;
+		line-height: $line-height;
+		height: $height;
+		display: $display;
+		border: $border;
+		cursor: pointer;
+		width: $width;
+		transition: all 400ms;
+
+		&:after {
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+			content: '';
+		}
+
+		&:hover {
+			background-color: $bgHov;
+			color: $colorHov;
+			box-shadow: $shadowHov;
+			text-decoration: none;
+		}
+	}
+}
+@mixin btnBg2($bg:#b2b4b7, $bgrepeat: no-repeat, $color:#fff, $border: none, $shadow:none, $font-size:14px, $text-transform:uppercase, $font-weight:400, $padding:0 25px, $border-radius:22px, $height:44px, $line-height: $height, $display: inline-block, $bgHov:#b2b4b7, $shadowHov:0 6px 12px rgba(178, 180, 183, 0.3), $colorHov:#fff, $width: auto) {
+	& {
+		background-color: $bg;
+		background-repeat: $bgrepeat;
+		color: $color;
+		box-shadow: $shadow;
+		text-decoration: none;
+		font-size: $font-size;
+		font-weight: $font-weight;
+		text-transform: $text-transform;
+		padding: $padding;
+		border-radius: $border-radius;
+		line-height: $line-height;
+		height: $height;
+		display: $display;
+		border: $border;
+		cursor: pointer;
+		width: $width;
+		transition: all 400ms;
+
+		&:after {
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+			content: '';
+		}
+
+		&:hover {
+			background-color: $bgHov;
+			color: $colorHov;
+			box-shadow: $shadowHov;
+			text-decoration: none;
+		}
+	}
+}
+@mixin justify($margin-bottom: -25px) {
+	& {
+		text-align: justify;
+		margin-bottom: $margin-bottom;
+
+		&:after {
+			display: inline-block;
+			content: '';
+			width: 100%;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-@mixin clearfix {
+@mixin clearfix() {
 
 	&::before,
 	&::after {
@@ -9,12 +9,4 @@
   	&::after {
 	    clear: both;
 	}
-}
-
-@mixin clearClearfix {
-
-	&::before,
-	&::after {
-    	display: none;
-  	}
 }
