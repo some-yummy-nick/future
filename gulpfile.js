@@ -79,6 +79,9 @@ gulp.task('css', () => {
 		}))
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass())
+		.pipe(plugins.cssUrlAdjuster({
+			prepend: '../images/'
+		}))
 		.pipe(plugins.postcss(processors))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(config.src.build.css.dest))
@@ -116,7 +119,10 @@ gulp.task('nunjucks', () => {
 			}
 		}))
 		.pipe(plugins.nunjucksRender({
-			path: [config.src.source.components]
+			path: [config.src.source.components],
+			data: {
+				src: "images/"
+			}
 		}))
 		.pipe(plugins.htmlPrettify(configHtml))
 		.pipe(gulp.dest(config.src.build.dest))
@@ -229,6 +235,12 @@ gulp.task('watch:images', () => {
 });
 
 gulp.task('watch', () => {
+	plugins.watch(config.src.watch.images, () => {
+		gulp.start('images');
+	});
+	plugins.watch(config.src.source.svg.src, () => {
+		gulp.start('svg');
+	});
 	plugins.watch(config.src.watch.html, () => {
 		gulp.start('nunjucks');
 	});
@@ -241,16 +253,10 @@ gulp.task('watch', () => {
 	plugins.watch(config.src.watch.js, () => {
 		gulp.start('js');
 	});
-	plugins.watch(config.src.watch.images, () => {
-		gulp.start('images');
-	});
-	plugins.watch(config.src.source.svg.src, () => {
-		gulp.start('svg');
-	});
 });
 
 gulp.task('default', ['watch', 'webserver']);
-gulp.task('build', ['js', 'nunjucks', 'css', 'ajax', 'fonts', 'images']);
+gulp.task('build', ['svg', 'fonts', 'images', 'js', 'nunjucks', 'css', 'ajax']);
 
 
 function isMax(mq) {

@@ -4,12 +4,18 @@
 	&_ambulance {
 		background: url(https://icongr.am/fontawesome/ambulance.svg?size=34&color=000000);
 		height: 34px;
-		width: 34px;
+		width: 34px;  
 	}
 
 	&_auth {
-		background: svg-load('auth.svg', fill=#c70000) no-repeat;
-		height: 15px;
-		width: 15px;
+		background: svg-load('auth.svg', fill='#c70000') no-repeat; 
+		height: 32px;   
+		width: 32px;
+	}
+
+	&_auth2 {
+		background: url(auth.svg) no-repeat;
+		height: 32px;
+		width: 32px;
 	}
 }
