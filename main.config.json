@@ -2,25 +2,6 @@
 	"config": {
 		"src": {
 			"server": "./templates/main/build/",
-			"build": {
-				"dest": "./templates/main/build/",
-				"files": "./templates/main/build/**/*",
-				"js": {
-					"dest": "./templates/main/build/js/"
-				},
-				"css": {
-					"dest": "./templates/main/build/css/"
-				},
-				"fonts": {
-					"dest": "./templates/main/build/css/fonts/"
-				},
-				"images": {
-					"dest": "./templates/main/build/images/"
-				},
-				"ajax": {
-					"dest": "./templates/main/build/ajax/"
-				}
-			},
 			"source": {
 				"js": {
 					"copy": [
@@ -63,6 +44,25 @@
 				},
 				"ajax": {
 					"src": "./templates/main/source/ajax/*.html"
+				}
+			},
+			"build": {
+				"dest": "./templates/main/build/",
+				"files": "./templates/main/build/**/*",
+				"js": {
+					"dest": "./templates/main/build/js/"
+				},
+				"css": {
+					"dest": "./templates/main/build/css/"
+				},
+				"fonts": {
+					"dest": "./templates/main/build/css/fonts/"
+				},
+				"images": {
+					"dest": "./templates/main/build/images/"
+				},
+				"ajax": {
+					"dest": "./templates/main/build/ajax/"
 				}
 			},
 			"watch": {
