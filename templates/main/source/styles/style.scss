@@ -1,16 +1,18 @@
 @import 'mixins';
-@import 'variables';
-@import 'reboot';
-@import 'base';
-@import 'fonts';
-@import 'wrapper';
-@import 'container';
+@import 'base/variables';
+@import 'base/reboot'; 
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/wrapper';
+@import 'base/container';
+@import 'base/middle';
+
 @import '../components/header/global/header';
 @import '../components/logo/global/logo';
 @import '../components/menu/menu-header/menu-header';
 @import 'hamburger';
 @import '../components/breadcrumbs/breadcrumbs';
-@import 'middle';
+
 @import 'title';
 @import '../components/pagination/pagination';
 @import '../components/checkbox/checkbox';

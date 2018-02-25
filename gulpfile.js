@@ -104,7 +104,10 @@ gulp.task('ajax', () => {
 			}
 		}))
 		.pipe(plugins.nunjucksRender({
-			path: [config.src.source.components]
+			path: [config.src.source.components],
+			data: {
+				src: "images/"
+			}
 		}))
 		.pipe(plugins.htmlPrettify(configHtml))
 		.pipe(gulp.dest(config.src.build.ajax.dest))
