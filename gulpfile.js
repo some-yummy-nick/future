@@ -54,7 +54,9 @@ gulp.task('css', () => {
 	var imageInliner = require('postcss-image-inliner');
 
 	var processors = [
-		cssnext,
+		cssnext({
+			warnForDuplicates: false
+		}),
 		inlineSvg({
 			path: config.src.source.svg.dest,
 			removeFill: true
