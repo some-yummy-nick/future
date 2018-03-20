@@ -260,6 +260,11 @@ gulp.task('watch', () => {
 	});
 });
 
+gulp.task('build:clean', () => {
+	gulp.src(config.src.build.dest)
+	.pipe(plugins.clean());
+});
+
 gulp.task('default', ['watch', 'webserver']);
 gulp.task('build', ['svg', 'fonts', 'images', 'js', 'nunjucks', 'css', 'ajax']);
 
