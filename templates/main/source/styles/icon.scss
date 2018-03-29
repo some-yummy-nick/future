@@ -7,15 +7,21 @@
 		width: 34px;  
 	}
 
-	&_auth {
-		background: svg-load('auth.svg', fill='#c70000') no-repeat; 
-		height: 32px;   
-		width: 32px;
-	}
-
 	&_auth2 {
 		background: url(auth.svg) no-repeat;
 		height: 32px;
 		width: 32px;
+	}
+
+	&_phone{
+		background: svg-load('phone.svg', fill='#fc2226') no-repeat;
+		width: 15px;
+		height: 15px;
+	}
+
+	&_email{
+		background: svg-load('email.svg', fill='#fc2226') no-repeat;
+		width: 17px;
+		height: 13px;
 	}
 }

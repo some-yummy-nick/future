@@ -1,0 +1,43 @@
+.why {
+
+	.container{
+		max-width: 1500px;
+	}
+
+	&__image {
+		text-align: center;
+	}
+
+	&__block{
+		position: absolute;
+		top: 0;
+		left: 140px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		text-align: center;
+		width: 382px;
+		padding: 0 45px;
+		background: #fff;
+		z-index: 3;
+	}
+
+	&__title{
+		margin-bottom: 35px;
+		color: #1e262c;
+		font-size: 30px;
+		line-height: 40px;
+
+		text-transform: uppercase;
+	}
+
+	&__text{
+		color: #1e262c;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 30px;
+
+	}
+}

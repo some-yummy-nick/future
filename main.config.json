@@ -8,7 +8,8 @@
 						"./templates/main/source/js/libs/jquery-3.2.1.min.js",
 						"./templates/main/source/js/users/map.js",
 						"./templates/main/source/js/libs/jquery-ui-1.12.1.custom/jquery-ui.min.js",
-						"./templates/main/source/js/users/frontend-works.js"
+						"./templates/main/source/js/users/frontend-works.js",
+						"./templates/main/source/js/plugins/swiper/swiper.min.css"
 					],
 					"src": [
 						"./templates/main/source/js/**/*.js",

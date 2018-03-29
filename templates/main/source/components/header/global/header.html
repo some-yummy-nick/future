@@ -1,20 +1,25 @@
-<header class="header geometria">
+<header class="header">
 	<div class="container">
 		<div class="header__blocks">
 			<div class="header__block">
 				{% include 'logo/global/logo.html' %}
 			</div>
-			<div class="header__block header__block_wide">
+
+			<div class="header__block">
+				<!-- start  header__contacts -->
+				<div class="header__contacts">
+					<a class="header__phone" href="tel:+74952151097">+7 495 215 10 97</a>
+					<a class="header__email" href="mailto:hr@medianation.ru">hr@medianation.ru</a>
+				</div>
+				<!-- end  header__contacts -->
+			</div>
+
+			<div class="header__block">
 				<button class="hamburger" id="js-hamburger" aria-expanded="false">
-					<span
-						class="hamburger__screen-reader-text">Меню</span>
+					<span class="hamburger__screen-reader-text">Меню</span>
 
 				</button>
 				{% include 'menu/menu-header/menu-header.html' %}
-			</div>
-			<div class="header__block header__block_mobile">
-				{% include 'social/social.html' %}
-
 			</div>
 		</div>
 	</div>

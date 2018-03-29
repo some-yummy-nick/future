@@ -1,0 +1,45 @@
+{%set items = ['amediateka','gett', 'butik', 'papa', 'touch','mytoys', 'connect', 'ship', 'euroset','hoff', 'adamas', 'euroset', 'litres','rigla', 'read']%}
+<div class="clients">
+	<div class="container">
+		<div class="clients__wrapper">
+			<div class="clients__left">
+				<div class="clients__title">
+					Мы – это постоянные истории успеха
+				</div>
+				<div class="clients__text">
+					МедиаНация – один из ключевых игроков на рынке Digital рекламы. <br>
+					Это только часть наших клиентов:
+				</div>
+			</div>
+			<div class="clients__right">
+
+				<!-- start clients__row-->
+				<div class="clients__row">
+
+					{% for item in items %}
+					<!--start clients__col-->
+					<div class="clients__col">
+						<div class="clients__item">
+							<a href="#"></a>
+							<div class="clients__image  clients__image_{{item}}">
+								<img class="lazyload" data-src="{{src}}clients/{{item}}.png" alt="">
+							</div>
+						</div>
+					</div>
+					<!--end clients__col-->
+					{% endfor %}
+
+					<!--start clients__col-->
+					<div class="clients__col">
+						<div class="clients__item">
+							<a href="#"></a>
+							<div class="clients__more">и многие другие...</div>
+						</div>
+					</div>
+					<!--end clients__col-->
+				</div>
+				<!-- end clients__row-->
+			</div>
+		</div>
+	</div>
+</div>

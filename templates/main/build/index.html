@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Example</title>
+	<title>Future</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -14,17 +14,46 @@
 
 	<style>
 		@font-face {
-						font-family: "Geometria";
-						src: url('css/fonts/Geometria/Geometria.woff2') format('woff2'),
-						url('css/fonts/Geometria/Geometria.woff') format('woff'),
-						url('css/fonts/Geometria/Geometria.ttf') format('truetype');
+					font-family: Montserrat;
+						src: url('css/fonts/montserrat/montserrat.woff2') format('woff2'),
+						url('css/fonts/Montserrat/montserrat.woff') format('woff'),
+						url('css/fonts/Montserrat/montserrat.ttf') format('truetype');
 						font-weight: normal;
 						font-style: normal;
 						font-display: optional;
 				}
 
-				.font-marketsans .geometria {
-						font-family: "Geometria", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif
+				@font-face {
+					font-family: Montserrat;
+					src: url('css/fonts/montserrat/montserratlight.woff2') format('woff2'),
+					url('css/fonts/Montserrat/montserratlight.woff') format('woff'),
+					url('css/fonts/Montserrat/montserratlight.ttf') format('truetype');
+					font-weight: 300;
+					font-style: normal;
+					font-display: optional;
+				}
+
+				@font-face {
+					font-family: Montserrat;
+					src: url('css/fonts/montserrat/montserratmedium.woff2') format('woff2'),
+					url('css/fonts/Montserrat/montserratmedium.woff') format('woff'),
+					url('css/fonts/Montserrat/montserratmedium.ttf') format('truetype');
+					font-weight: 500;
+					font-style: normal;
+					font-display: optional;
+				}
+
+				@font-face {
+					font-family: Montserrat;
+					src: url('css/fonts/montserrat/montserratbold.woff2') format('woff2'),
+					url('css/fonts/Montserrat/montserratbold.woff') format('woff'),
+					url('css/fonts/Montserrat/montserratbold.ttf') format('truetype');
+					font-weight: 700;
+					font-style: normal;
+					font-display: optional;
+				}
+				.montserrat {
+						font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif;
 				}
 	</style>
 	<!--загрузка кастомных шрифтов -->
@@ -33,136 +62,439 @@
 		var useCustomFont = ('fontDisplay' in document.documentElement.style) ||
 		  (localStorage && localStorage.getItem('ebay-font'));
 		if (useCustomFont) {
-			document.documentElement.classList.add('font-marketsans');
+			document.documentElement.classList.add('montserrat');
 		}
 	</script>
 	<!--загрузка кастомных шрифтов -->
 
+
+	<link rel="stylesheet" type="text/css" href="js/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
 
 	<div class="wrapper" id="js-wrapper">
+		<div class="wrap js-wrap">
 
-		<header class="header geometria">
-			<div class="container">
-				<div class="header__blocks">
-					<div class="header__block">
-						<div class="logo">
-							<a href="#" class="logo__link">
-								<img src="images/logo.png" alt="" class="logo__pic">
-							</a>
-						</div>
-						<!-- /.logo -->
-					</div>
-					<div class="header__block header__block_wide">
-						<button class="hamburger" id="js-hamburger" aria-expanded="false">
-							<span class="hamburger__screen-reader-text">Меню</span>
-
-						</button>
-
-
-						<div class="menu" id="js-menu" aria-expanded="false">
-							<nav>
-								<ul class="menu__list">
-
-									<li class="menu__item">
-										<a href="#" class="menu__link">Продукты</a>
-									</li>
-
-									<li class="menu__item">
-										<a href="#" class="menu__link">Корзина</a>
-									</li>
-
-									<li class="menu__item">
-										<a href="#" class="menu__link">Доставка</a>
-									</li>
-
-									<li class="menu__item">
-										<a href="#" class="menu__link">Руководство</a>
-									</li>
-
-									<li class="menu__item">
-										<a href="#" class="menu__link">Контакты</a>
-									</li>
-
-								</ul>
-							</nav>
-						</div>
-						<!--end menu-->
-					</div>
-					<div class="header__block header__block_mobile">
-						<div class="social">
-							<ul class="social__list">
-								<li class="social__item">
-									<a class="social__link social__link_vk" href="#">В контакте</a>
-								</li>
-								<li class="social__item">
-									<a class="social__link social__link_fb" href="#">Facebook</a>
-								</li>
-								<li class="social__item">
-									<a class="social__link social__link_youtube" href="#">Youtube</a>
-								</li>
-							</ul>
+			<header class="header">
+				<div class="container">
+					<div class="header__blocks">
+						<div class="header__block">
+							<div class="logo">
+								<a href="#" class="logo__link">
+									<img src="images/logo.svg" alt="" class="logo__pic">
+								</a>
+							</div>
+							<!-- /.logo -->
 						</div>
 
+						<div class="header__block">
+							<!-- start  header__contacts -->
+							<div class="header__contacts">
+								<a class="header__phone" href="tel:+74952151097">+7 495 215 10 97</a>
+								<a class="header__email" href="mailto:hr@medianation.ru">hr@medianation.ru</a>
+							</div>
+							<!-- end  header__contacts -->
+						</div>
+
+						<div class="header__block">
+							<button class="hamburger" id="js-hamburger" aria-expanded="false">
+								<span class="hamburger__screen-reader-text">Меню</span>
+
+							</button>
+
+
+							<div class="menu" id="js-menu" aria-expanded="false">
+								<nav>
+									<ul class="menu__list">
+
+										<li class="menu__item">
+											<a href="#" class="menu__link">Главная</a>
+										</li>
+
+										<li class="menu__item">
+											<a href="#" class="menu__link">Истории успеха</a>
+										</li>
+
+										<li class="menu__item">
+											<a href="#" class="menu__link">Почему у нас стоит работать</a>
+										</li>
+
+										<li class="menu__item">
+											<a href="#" class="menu__link">Вакансии</a>
+										</li>
+
+										<li class="menu__item">
+											<a href="#" class="menu__link">Офис</a>
+										</li>
+
+
+										<li class="menu__item">
+											<a href="#" class="menu__link menu__link_accent">Отправить резюме</a>
+										</li>
+									</ul>
+								</nav>
+								<div class="menu__bottom">
+									<div class="menu__contacts">
+										<div class="menu__title">остались вопросы?</div>
+										<a class="menu__phone" href="tel:+74952151097">
+											<span class="icon icon_phone"></span>+7 495 215 10 97</a>
+										<a class="menu__email" href="mailto:hr@medianation.ru">
+											<span class="icon icon_email"></span>hr@medianation.ru</a>
+										<div class="menu__address">Москва, Трёхпрудный пер., д. 9, стр.1, офис 250</div>
+									</div>
+								</div>
+
+							</div>
+							<!--end menu-->
+						</div>
 					</div>
 				</div>
-			</div>
-		</header>
+			</header>
 
-		<div class="middle">
-			<div class="middle__container">
+			<div class="middle">
+				<div class="middle__container">
 
-				<div class="content">
-					<!-- WORKAREA -->
+					<div class="content">
+						<!-- WORKAREA -->
 
-					<div class="breadcrumbs">
-						<a href="#" class="breadcrumbs__link">Главная</a>
-						<span class="breadcrumbs__sep">/</span>
-						<span class="breadcrumbs__text">Новости</span>
+						<!--start clients-->
+
+						<div class="clients">
+							<div class="container">
+								<div class="clients__wrapper">
+									<div class="clients__left">
+										<div class="clients__title">
+											Мы – это постоянные истории успеха
+										</div>
+										<div class="clients__text">
+											МедиаНация – один из ключевых игроков на рынке Digital рекламы.
+											<br>Это только часть наших клиентов:
+										</div>
+									</div>
+									<div class="clients__right">
+
+										<!-- start clients__row-->
+										<div class="clients__row">
+
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_amediateka">
+														<img class="lazyload" data-src="images/clients/amediateka.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_gett">
+														<img class="lazyload" data-src="images/clients/gett.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_butik">
+														<img class="lazyload" data-src="images/clients/butik.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_papa">
+														<img class="lazyload" data-src="images/clients/papa.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_touch">
+														<img class="lazyload" data-src="images/clients/touch.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_mytoys">
+														<img class="lazyload" data-src="images/clients/mytoys.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_connect">
+														<img class="lazyload" data-src="images/clients/connect.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_ship">
+														<img class="lazyload" data-src="images/clients/ship.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_euroset">
+														<img class="lazyload" data-src="images/clients/euroset.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_hoff">
+														<img class="lazyload" data-src="images/clients/hoff.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_adamas">
+														<img class="lazyload" data-src="images/clients/adamas.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_euroset">
+														<img class="lazyload" data-src="images/clients/euroset.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_litres">
+														<img class="lazyload" data-src="images/clients/litres.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_rigla">
+														<img class="lazyload" data-src="images/clients/rigla.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__image  clients__image_read">
+														<img class="lazyload" data-src="images/clients/read.png" alt="">
+													</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+
+
+											<!--start clients__col-->
+											<div class="clients__col">
+												<div class="clients__item">
+													<a href="#"></a>
+													<div class="clients__more">и многие другие...</div>
+												</div>
+											</div>
+											<!--end clients__col-->
+										</div>
+										<!-- end clients__row-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--end clients-->
+
+						<!--start advantages-->
+						<div class="advantages">
+							<div class="container">
+								<div class="title">
+									<div class="title__promo">Как нам удается успешно работать с такими компаниями?</div>
+									<div class="title__main title__main_accent">Все дело в наших ценностях</div>
+								</div>
+								<!--start advantages__row-->
+								<div class="advantages__row">
+									<!--start advantages__col-->
+									<div class="advantages__col">
+										<div class="advantages__item">
+											<div class="advantages__image">
+												<img class="lazyload" data-src="images/advantages-image-1.png" alt="">
+												<div class="advantages__number">01</div>
+											</div>
+											<div class="advantages__desc">
+												<div class="advantages__title">Высокая экспертиза</div>
+												<div class="advantages__text">
+													Наша команда состоит из профессионалов, которые всегда <b>стремятся к наилучшему
+
+							результату,</b>исходя из требований и потребностей клиента. 
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--end advantages__col-->
+
+									<!--start advantages__col-->
+									<div class="advantages__col">
+										<div class="advantages__item">
+											<div class="advantages__image">
+												<img class="lazyload" data-src="images/advantages-image-2.png" alt="">
+												<div class="advantages__number">02</div>
+											</div>
+											<div class="advantages__desc">
+												<div class="advantages__title">Бесконечный драйв</div>
+												<div class="advantages__text">
+													Наша команда – <b>креативные знатоки своего дела.</b>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--end advantages__col-->
+
+									<!--start advantages__col-->
+									<div class="advantages__col">
+										<div class="advantages__item">
+											<div class="advantages__image">
+												<img class="lazyload" data-src="images/advantages-image-3.png" alt="">
+												<div class="advantages__number advantages__number_third">03</div>
+											</div>
+											<div class="advantages__desc">
+												<div class="advantages__title">Честность</div>
+												<div class="advantages__text">
+													Мы строим <b>долгие и эффективные отношения на честности</b> между сотрудниками. Только так мы достигаем успеха
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--end advantages__col-->
+								</div>
+								<!--end advantages__row-->
+
+								<!-- start btn -->
+								<a href="#" class="btn">Посмотреть вакансии</a>
+								<!-- end btn -->
+							</div>
+						</div>
+						<!--end advantages-->
+
+						<!--start why-->
+						<div class="why">
+							<div class="container">
+								<div class="swiper swiper_why">
+									<div class="swiper-container js-swiper-why">
+										<div class="swiper-wrapper">
+											<!-- start swiper-slide-->
+											<div class="swiper-slide">
+												<div class="why__item">
+													<div class="why__image">
+														<img src="images/why-image-1.jpg" alt="">
+													</div>
+												</div>
+											</div>
+											<!-- end swiper-slide-->
+
+											<!-- start swiper-slide-->
+											<div class="swiper-slide">
+												<div class="why__item">
+													<div class="why__image">
+														<img src="images/why-image-1.jpg" alt="">
+													</div>
+												</div>
+											</div>
+											<!-- end swiper-slide-->
+
+											<!-- start swiper-slide-->
+											<div class="swiper-slide">
+												<div class="why__item">
+													<div class="why__image">
+														<img src="images/why-image-1.jpg" alt="">
+													</div>
+												</div>
+											</div>
+											<!-- end swiper-slide-->
+										</div>
+									</div>
+									<div class="swiper-button-prev swiper_why-prev"></div>
+									<div class="swiper-button-next swiper_why-next"></div>
+
+									<!--start why__block-->
+									<div class="why__block">
+										<div class="swiper-pagination"></div>
+										<div class="why__title">
+											Почему у нас стоит работать?
+										</div>
+										<div class="why__text">Мы 9 лет задаем тренды в маркетинге и дарим яркие эмоции команде и клиентам</div>
+									</div>
+									<!--end why__block-->
+								</div>
+							</div>
+						</div>
+						<!--end why-->
+
+						<!-- END WORKAREA -->
 					</div>
-					<!-- /.breadcrumbs -->
+					<!-- /.content -->
 
-					<div class="title">Навигация</div>
-
-					<label class="checkbox search__checkbox">
-						<input type="checkbox" class="checkbox__input">
-						<span class="checkbox__icon"></span>
-						<span class="checkbox__text">По сайту</span>
-					</label>
-					<!-- /.checkbox -->
-
-					<div class="pagination">
-						<a href="#" class="pagination__prev"></a>
-						<a href="#" class="pagination__item">1</a>
-						<a href="#" class="pagination__item">2</a>
-						<a href="#" class="pagination__item">3</a>
-						<a href="#" class="pagination__more">...</a>
-						<a href="#" class="pagination__item">17</a>
-						<a href="#" class="pagination__next"></a>
-					</div>
-					<!-- /.pagination -->
-
-					<div class="icon icon_ambulance"></div>
-
-					<div class="icon icon_auth"></div>
-
-					<div class="icon icon_auth2"></div>
-
-
-					<!-- /.icon icon_auth -->
-
-					<!-- END WORKAREA -->
 				</div>
-				<!-- /.content -->
-
+				<!-- /.middle__container -->
 			</div>
-			<!-- /.middle__container -->
+			<!-- /.middle -->
 		</div>
-		<!-- /.middle -->
-
 	</div>
 	<!-- /.wrapper -->
 
@@ -220,7 +552,6 @@
 		<!-- /.footer__inner -->
 	</div>
 	<!-- /.footer -->
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script>
 		window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>')
@@ -250,7 +581,6 @@
 			"theme": "yellow"
 		});
 	</script>
-
 
 </body>
 

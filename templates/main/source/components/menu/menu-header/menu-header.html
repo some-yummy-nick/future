@@ -1,11 +1,4 @@
-{% set items = [
-		'Продукты',
-		'Корзина',
-		'Доставка',
-		'Руководство',
-		'Контакты'
-	]
-%}
+{% set items = [ 'Главная', 'Истории успеха', 'Почему у нас стоит работать', 'Вакансии', 'Офис' ] %}
 
 <div class="menu" id="js-menu" aria-expanded="false">
 	<nav>
@@ -15,7 +8,20 @@
 				<a href="#" class="menu__link">{{ item }}</a>
 			</li>
 			{% endfor %}
+
+			<li class="menu__item">
+				<a href="#" class="menu__link menu__link_accent">Отправить резюме</a>
+			</li>
 		</ul>
 	</nav>
+	<div class="menu__bottom">
+		<div class="menu__contacts">
+			<div class="menu__title">остались вопросы?</div>
+			<a class="menu__phone" href="tel:+74952151097"><span class="icon icon_phone"></span>+7 495 215 10 97</a>
+			<a class="menu__email" href="mailto:hr@medianation.ru"><span class="icon icon_email"></span>hr@medianation.ru</a>
+			<div class="menu__address">Москва, Трёхпрудный пер., д. 9, стр.1, офис 250</div>
+		</div>
+	</div>
+
 </div>
 <!--end menu-->

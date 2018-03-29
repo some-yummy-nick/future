@@ -1,0 +1,21 @@
+.btn{
+	display: block;
+	padding: 10px 0;
+	max-width: 364px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fc2226;
+	background-image: linear-gradient(to right, #cd202c 0%, #f48036 100%);
+	color: #fff;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 30px;
+	text-align: center;
+	text-transform: uppercase;
+
+	&:hover{
+		text-decoration: none;
+		background-color: #ce222c;
+		background-image: none;
+	}
+}

@@ -1,6 +1,10 @@
 .header {
 	position: relative;
 	padding-top: 20px;
+	min-height: 850px;
+	background-image:url(header-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
 
 	&__blocks {
 		display: flex;
@@ -10,19 +14,36 @@
 
 	&__block {
 
-		&_wide {
-			flex-grow: 1;
+	}
+
+	&__phone,
+	&__email{
+		color: #fff;
+		font-size: 18px;
+		line-height: 54px;
+		opacity: 0.8;
+
+		&:hover{
+			opacity: 1;
+			text-decoration: none;
 		}
 	}
 
-	@media(max-width:768px) {
-
-		&__block {
-
-			&_wide {
-				order: 1;
-				flex-grow: inherit;
-			}
-		}
+	&__email{
+		margin-left: 50px;
+		text-decoration: underline;
 	}
+
+	@media (max-width: $screen-md) {
+
+		}
+
+		@media (max-width: $screen-md) and (min-width: $screen-sm) {
+
+		}
+
+		@media (max-width: $screen-xs-max) {
+			height: 670px;
+		}
+
 }

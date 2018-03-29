@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 
-		<title>Example</title>
+		<title>Future</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -13,17 +13,46 @@
 
 		<style>
 				@font-face {
-						font-family: "Geometria";
-						src: url('css/fonts/Geometria/Geometria.woff2') format('woff2'),
-						url('css/fonts/Geometria/Geometria.woff') format('woff'),
-						url('css/fonts/Geometria/Geometria.ttf') format('truetype');
+					font-family: Montserrat;
+						src: url('css/fonts/montserrat/montserrat.woff2') format('woff2'),
+						url('css/fonts/Montserrat/montserrat.woff') format('woff'),
+						url('css/fonts/Montserrat/montserrat.ttf') format('truetype');
 						font-weight: normal;
 						font-style: normal;
 						font-display: optional;
 				}
 
-				.font-marketsans .geometria {
-						font-family: "Geometria", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif
+				@font-face {
+					font-family: Montserrat;
+					src: url('css/fonts/montserrat/montserratlight.woff2') format('woff2'),
+					url('css/fonts/Montserrat/montserratlight.woff') format('woff'),
+					url('css/fonts/Montserrat/montserratlight.ttf') format('truetype');
+					font-weight: 300;
+					font-style: normal;
+					font-display: optional;
+				}
+
+				@font-face {
+					font-family: Montserrat;
+					src: url('css/fonts/montserrat/montserratmedium.woff2') format('woff2'),
+					url('css/fonts/Montserrat/montserratmedium.woff') format('woff'),
+					url('css/fonts/Montserrat/montserratmedium.ttf') format('truetype');
+					font-weight: 500;
+					font-style: normal;
+					font-display: optional;
+				}
+
+				@font-face {
+					font-family: Montserrat;
+					src: url('css/fonts/montserrat/montserratbold.woff2') format('woff2'),
+					url('css/fonts/Montserrat/montserratbold.woff') format('woff'),
+					url('css/fonts/Montserrat/montserratbold.ttf') format('truetype');
+					font-weight: 700;
+					font-style: normal;
+					font-display: optional;
+				}
+				.montserrat {
+						font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif;
 				}
 		</style><!--загрузка кастомных шрифтов -->
 
@@ -31,9 +60,11 @@
 		var useCustomFont = ('fontDisplay' in document.documentElement.style) ||
 		  (localStorage && localStorage.getItem('ebay-font'));
 		if (useCustomFont) {
-			document.documentElement.classList.add('font-marketsans');
+			document.documentElement.classList.add('montserrat');
 		}
 		</script><!--загрузка кастомных шрифтов -->
 
+
+		<link rel="stylesheet" type="text/css" href="js/swiper.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>

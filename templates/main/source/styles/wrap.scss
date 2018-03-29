@@ -1,0 +1,18 @@
+.wrap {
+
+	@media (max-width: $screen-md) {
+
+	}
+
+	@media (max-width: $screen-md) and (min-width: $screen-sm) {
+
+	}
+
+	@media (max-width: $screen-xs-max) {
+
+		&.active {
+			transform: translateX(-400px);
+		}
+	}
+
+}

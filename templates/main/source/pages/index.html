@@ -2,47 +2,42 @@
 
 <body>
 
-<div class="wrapper" id="js-wrapper">
+	<div class="wrapper" id="js-wrapper">
+		<div class="wrap js-wrap">
 
 		{% include 'header/global/header.html' %}
 
 		<div class="middle">
-				<div class="middle__container">
+			<div class="middle__container">
 
-						<div class="content">
-								<!-- WORKAREA -->
+				<div class="content">
+					<!-- WORKAREA -->
 
-								{% include 'breadcrumbs/breadcrumbs.html' %}
+					<!--start clients-->
+					{% include 'clients/clients.html' %}
+					<!--end clients-->
 
-								<div class="title">Навигация</div>
+					<!--start advantages-->
+					{% include 'advantages/advantages.html' %}
+					<!--end advantages-->
 
-								{% include 'checkbox/checkbox.html' %}
-								{% include 'pagination/pagination.html' %}
+					<!--start why-->
+					{% include 'why/why.html' %}
+					<!--end why-->
 
-								<div class="icon icon_ambulance"></div>
-
-								<div class="icon icon_auth"></div>
-
-								<div class="icon icon_auth2"></div>
-
-
-								<!-- /.icon icon_auth -->
-
-								<!-- END WORKAREA -->
-						</div>
-						<!-- /.content -->
-
+					<!-- END WORKAREA -->
 				</div>
-				<!-- /.middle__container -->
+				<!-- /.content -->
+
+			</div>
+			<!-- /.middle__container -->
 		</div>
 		<!-- /.middle -->
+		</div>
+	</div>
+	<!-- /.wrapper -->
 
-</div>
-<!-- /.wrapper -->
-
-{% include 'footer/global/footer.html' %}
-{% include 'connect/script.html' %}
-{% include 'connect/stylesheet.html' %}
+	{% include 'footer/global/footer.html' %} {% include 'connect/script.html' %} {% include 'connect/stylesheet.html' %}
 
 </body>
 

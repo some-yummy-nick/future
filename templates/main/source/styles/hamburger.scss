@@ -1,13 +1,13 @@
 :root {
-	--hamburger-color: #000;
-	--hamburger-width: 40px;
-	--hamburger-height: 20px;
+	--hamburger-color: #fff;
+	--hamburger-width: 32px;
+	--hamburger-height: 18px;
 	--hamburger-height-line: 2px;
 }
 
 .hamburger {
 	position: relative;
-	display: none;
+	display: inline-block;
 	width: var(--hamburger-width);
 	height: var(--hamburger-height);
 	border: none;
@@ -21,8 +21,8 @@
 	font-size: 0.875em;
 
 	&:focus {
-		outline: thin dotted;
-		outline-offset: -2px;
+		outline: none;
+
 	}
 	&::before,
 	&::after {
@@ -50,6 +50,7 @@
 	}
 
 	&.opened {
+		z-index: 11;
 		&::after {
 			transform: rotate(45deg);
 			box-shadow: none;
@@ -59,13 +60,20 @@
 		}
 	}
 
-	@media(max-width: 768px) {
-		display: inline-block;
-	}
+	@media (max-width: $screen-md) {
 
-	@media (max-width: 480px) {
-		--hamburger-width: 30px;
-		--hamburger-height: 15px;
-	}
+		}
+
+		@media (max-width: $screen-md) and (min-width: $screen-sm) {
+
+		}
+
+		@media (max-width: $screen-xs-max) {
+			&.opened {
+				transform: translateX(400px);
+			}
+		}
+
+
 }
 
