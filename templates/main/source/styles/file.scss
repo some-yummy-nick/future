@@ -1,0 +1,88 @@
+.file {
+	width: 99.9%;
+	position: absolute;
+	bottom: 1px;
+
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	&__input {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		z-index: -1;
+	}
+
+	&__label {
+		float: right;
+		display: inline-block;
+		width: 293px;
+		padding: 11.5px 0;
+		cursor: pointer;
+		background-color: #fafafa;
+		margin: 0;
+		color: #202020;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 1.1;
+		text-align: center;
+
+		span{
+			border-bottom: 1px dashed #c3c3c3;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+	}
+
+	&__result{
+		float: left;
+		margin-left: 20px;
+
+		&-item{
+			padding: 5px;
+			background-color: #fafafa;
+			border: 1px solid #ebebeb;
+			border-radius: 5px;
+		}
+
+		.icon{
+			position: static;
+
+			&_pdf{
+				transform: translateY(2px);
+			}
+		}
+	}
+
+	&__formats {
+		float: right;
+		color: #959697;
+		font-size: 13px;
+		padding: 11px 0;
+		margin-right: 15px;
+	}
+
+	@media (max-width: $screen-md) {
+		padding: 0 20px;
+		&__label {
+			margin-right: 0;
+		}
+	}
+
+	@media (max-width: $screen-md) and (min-width: $screen-sm) {
+
+	}
+
+	@media (max-width: $screen-xs-max) {
+
+	}
+}

@@ -1,0 +1,15 @@
+.resume{
+	padding: 50px 0;
+	background-color: #fafafa;
+
+	.container{
+		max-width: 1150px;
+	}
+
+	.title{
+
+		&__main{
+			font-weight: 700;
+		}
+	}
+}

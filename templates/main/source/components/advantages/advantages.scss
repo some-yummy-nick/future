@@ -55,6 +55,8 @@
 	}
 
 	@media (max-width: $screen-md) {
+		padding: 50px 0;
+
 		&__row {
 			flex-wrap: wrap;
 		}

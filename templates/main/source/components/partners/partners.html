@@ -1,0 +1,22 @@
+{%set items = ['yandex','google', 'mail', 'k50']%}
+<div class="partners">
+	<div class="partners__title">Мы растим бизнес клиентов вместе с нашими партнерами</div>
+
+	<div class="partners__row">
+		{% for item in items %}
+		<!--  start partners__col -->
+		<div class="partners__col">
+			<!--  start partners__item -->
+			<div class="partners__item">
+				<div class="partners__image">
+					<img class="lazyload" data-src="{{src}}partners/{{item}}.png" alt="">
+				</div>
+			</div>
+			<!-- end partners__item -->
+		</div>
+		<!--  end partners__col -->
+		{% endfor %}
+
+	</div>
+
+</div>

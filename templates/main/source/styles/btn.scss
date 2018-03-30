@@ -12,10 +12,16 @@
 	line-height: 30px;
 	text-align: center;
 	text-transform: uppercase;
+	border: none;
+	cursor: pointer;
 
 	&:hover{
 		text-decoration: none;
 		background-color: #ce222c;
 		background-image: none;
+	}
+
+	&:focus{
+		outline: none;
 	}
 }

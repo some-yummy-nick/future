@@ -1,0 +1,48 @@
+.partners {
+	padding: 70px 0;
+
+	&__title {
+		max-width: 95% ;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 80px;
+		text-align: center;
+		color: #1e262c;
+		font-size: 30px;
+		line-height: 40px;
+	}
+
+	&__row{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__col{
+		width: 25%;
+	}
+
+	&__image{
+		text-align: center;
+	}
+
+	@media (max-width: $screen-md) {
+		padding: 50px 0;
+		padding-bottom: 0;
+
+		&__col{
+			width: 50%;
+		}
+
+		&__item{
+			margin-bottom: 60px;
+		}
+	}
+
+	@media (max-width: $screen-md) and (min-width: $screen-sm) {
+
+	}
+
+	@media (max-width: $screen-xs-max) {
+
+	}
+}

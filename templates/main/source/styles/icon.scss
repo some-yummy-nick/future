@@ -24,4 +24,34 @@
 		width: 17px;
 		height: 13px;
 	}
+
+	&_user{
+		background: svg-load('user.svg', fill='#e1e1e1') no-repeat;
+		width: 15px;
+		height: 15px;
+	}
+
+	&_envelope{
+		background: svg-load('envelope.svg', fill='#e1e1e1') no-repeat;
+		width: 17px;
+		height: 13px;
+	}
+
+	&_fly{
+		background: svg-load('fly.svg', fill='#e1e1e1') no-repeat;
+		width: 17px;
+		height: 16px;
+	}
+
+	&_close{
+		background: svg-load('close.svg', fill='#fc2226') no-repeat;
+		width: 12px;
+		height: 12px;
+	}
+
+	&_pdf{
+		background: svg-load('pdf.svg', fill='#fc2226') no-repeat;
+		width: 15px;
+		height: 18px;
+	}
 }

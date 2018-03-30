@@ -3,7 +3,7 @@
 
 	&_why {
 
-		.swiper-pagination{
+		.swiper-pagination {
 			display: inline-block;
 			width: auto;
 			left: 50%;
@@ -12,12 +12,12 @@
 			z-index: 4;
 		}
 
-		.swiper-pagination-bullet + .swiper-pagination-bullet{
+		.swiper-pagination-bullet + .swiper-pagination-bullet {
 			margin-left: 10px;
 		}
 
-		.swiper-pagination-bullet{
-			&-active{
+		.swiper-pagination-bullet {
+			&-active {
 				background: $colorLink;
 			}
 		}
@@ -63,6 +63,52 @@
 
 			&:after {
 				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAFCAYAAACjKgd3AAAARUlEQVQYlZ2QMQoAIAwDr+LDfJq+rPqrbLpUcK2ZSiAXGpNEUg4MYF6jZAlAC5DHjUnaH6BXowKWDN3SSbxVP5oX0Hk2OUtMEF3USFiXAAAAAElFTkSuQmCC);
+			}
+		}
+
+	}
+
+	@media (max-width: $screen-md) {
+
+		&_why {
+			padding-top: 65px;
+
+			.swiper-pagination{
+				bottom: 50px;
+			}
+
+			&-next, &-prev{
+				bottom: auto;
+				top: 90%;
+			}
+
+		}
+	}
+
+	@media (max-width: $screen-md) and (min-width: $screen-sm) {
+		&_why {
+
+			&-prev{
+				left: 46%;
+			}
+
+			&-next{
+				right: auto;
+				left: 54%;
+			}
+		}
+	}
+
+	@media (max-width: $screen-xs-max) {
+		&_why {
+
+			&-prev{
+				left: 40%;
+			}
+
+			&-next{
+				right: auto;
+				left: 55%;
 			}
 		}
 	}

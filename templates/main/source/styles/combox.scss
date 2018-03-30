@@ -1,0 +1,158 @@
+.combox {
+	line-height: 1;
+	position: relative;
+	width: 365px;
+	height: 65px;
+	font-size: 16px;
+	z-index: 3;
+	border-bottom: none;
+	box-shadow: 0 0 20px rgba(0, 172, 236, 0.02);
+
+	&.active {
+		z-index: 3;
+	}
+
+	&_basketpopup {
+		margin-bottom: 17px;
+	}
+
+	&__section {
+		background: #fff;
+		position: relative;
+		border-bottom: none;
+	}
+
+	&:hover &__section {
+
+		color: #000;
+	}
+
+	&__section:active {
+	}
+
+	&.active &__section {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		box-shadow: 0 0 20px rgba(0, 172, 236, 0.02);
+	}
+
+	&__title {
+		width: 365px;
+		height: 65px;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		color: #1e262c;
+		font-size: 30px;
+		padding: 0 29px;
+		position: relative;
+		border-bottom: 1px solid #e1e1e1;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			border-bottom: 1.5px solid currentColor;
+			border-right: 1.5px solid currentColor;
+			right: 25px;
+			top: 25px;
+			transform: rotate(45deg);
+		}
+
+		&.selected {
+		}
+	}
+
+	&_basketpopup &__title {
+		padding: 0 30px;
+		font-size: 14px;
+
+	}
+
+	&:hover &__title {
+		color: rgb(0, 0, 0);
+	}
+
+	&.active &__title {
+
+		&:after {
+			top: 30px;
+			transform: rotate(-135deg);
+		}
+	}
+
+	&__list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: none;
+	}
+
+	&.active &__list {
+		display: block;
+	}
+
+	&__label {
+		color: rgb(100, 100, 100);
+		font-weight: 400;
+		cursor: pointer;
+		display: block;
+		padding: 22px 25px;
+		position: relative;
+		margin-bottom: 0;
+
+		&:hover {
+			color: #fff;
+			background-color: #1e262c;
+		}
+	}
+
+	&__radio:checked ~ &__text {
+		color: rgb(0, 0, 0);
+		font-weight: 700;
+	}
+
+	&__item.active &__label {
+		color: #000;
+	}
+
+	&__item.active {
+
+		.combox__label {
+
+			&:hover {
+
+				.combox__radio:checked~.combox__text{
+					color: #ffffff;
+				}
+			}
+
+		}
+	}
+
+	&__radio {
+		visibility: hidden;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	&__text {
+	}
+
+	@media (max-width: $screen-md) {
+
+	}
+
+	@media (max-width: $screen-md) and (min-width: $screen-sm) {
+
+	}
+
+	@media (max-width: $screen-xs-max) {
+
+	}
+}

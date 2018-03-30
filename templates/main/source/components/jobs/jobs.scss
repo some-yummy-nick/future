@@ -1,0 +1,111 @@
+.jobs {
+	padding: 60px 0;
+	padding-bottom: 100px;
+
+	.container {
+		max-width: 1400px;
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__col {
+		width: 33.33%;
+	}
+
+	&__title {
+		margin-bottom: 10px;
+		color: #1e262c;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 30px;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		margin-bottom: 15px;
+		max-width: 370px;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		color: #56595b;
+	}
+
+	&__image {
+		margin-bottom: 45px;
+	}
+
+	&__link {
+		position: relative;
+		padding-right: 25px;
+		color: #000;
+
+		&::after {
+			content: "";
+			position: absolute;
+			display: block;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 17px;
+			height: 5px;
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAFCAYAAACjKgd3AAAASUlEQVQYlZ3QsQ2AIABE0YdhEgrW0NFkMnEvEmkwMXZwzVX3f3KhpWwyFedosM0SsOMakANCS/lZAH1TIsLk6JVWFNS4YL79PunJqA0VVjIdgwAAAABJRU5ErkJggg==);
+		}
+
+		&:hover {
+			text-decoration: none;
+
+			span {
+				&:after {
+					width: 0;
+				}
+			}
+		}
+
+		span {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 1px;
+				bottom: 0;
+				background: currentColor;
+				transition: width 0.3s;
+			}
+		}
+	}
+
+	@media (max-width: $screen-md) {
+		padding-bottom: 70px;
+		
+		&__row{
+			-webkit-overflow-scrolling: touch;
+			overflow-y: hidden;
+			overflow-x: scroll;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
+		&__col{
+			min-width: 334px;
+		}
+
+		&__item {
+
+			margin-right: 70px;
+		}
+	}
+
+	@media (max-width: $screen-md) and (min-width: $screen-sm) {
+
+	}
+
+	@media (max-width: $screen-xs-max) {
+
+	}
+}
