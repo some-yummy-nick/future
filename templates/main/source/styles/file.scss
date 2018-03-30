@@ -47,11 +47,29 @@
 		float: left;
 		margin-left: 20px;
 
+		&-item+&-item{
+			margin-left: 10px;
+		}
+
 		&-item{
+			display: inline-block;
+			vertical-align: top;
 			padding: 5px;
 			background-color: #fafafa;
 			border: 1px solid #ebebeb;
 			border-radius: 5px;
+			font-size: 13px;
+			font-weight: 400;
+		}
+
+		&-size{
+			color: #909090;
+			margin-right: 5px;
+		}
+
+		&-text{
+			margin-left: 10px;
+			margin-right: 3px;
 		}
 
 		.icon{
@@ -59,6 +77,10 @@
 
 			&_pdf{
 				transform: translateY(2px);
+			}
+
+			&_close{
+				cursor: pointer;
 			}
 		}
 	}
@@ -72,17 +94,43 @@
 	}
 
 	@media (max-width: $screen-md) {
-		padding: 0 20px;
+
 		&__label {
 			margin-right: 0;
 		}
 	}
 
 	@media (max-width: $screen-md) and (min-width: $screen-sm) {
-
+		padding: 0 20px;
 	}
 
 	@media (max-width: $screen-xs-max) {
+		display: flex;
+		flex-wrap: wrap;
+		position: static;
+		justify-content: space-between;
 
+		&__result{
+			width: 100%;
+			margin-left: 0;
+
+
+			&-item{
+				background: #fff;
+			}
+		}
+
+		&__label{
+			width: auto;
+			padding-left: 15px;
+			padding-right: 15px;
+			margin-top: 10px;
+			background: #fff;
+		}
+
+		&__formats{
+			margin-top: 10px;
+			margin-right: 0;
+		}
 	}
 }

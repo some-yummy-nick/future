@@ -30,7 +30,7 @@
 		}
 	}
 
-	&__message{
+	&__message {
 		position: relative;
 		margin-bottom: 30px;
 
@@ -75,24 +75,24 @@
 		}
 	}
 
-	&__footer{
+	&__footer {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 
-		.btn{
+		.btn {
 			flex-grow: 1;
 			margin-right: 0;
 		}
 	}
 
-	&__admire{
+	&__admire {
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 24px;
 		color: #56595b;
 
-		a{
+		a {
 			text-decoration: underline;
 		}
 	}
@@ -102,34 +102,34 @@
 			flex-wrap: wrap;
 		}
 
-		&__block{
+		&__block {
 			margin-bottom: 25px;
 
-			&:nth-child(1){
+			&:nth-child(1) {
 				width: 100%;
 			}
 
-			&:nth-child(2){
+			&:nth-child(2) {
 				margin-left: 0;
 			}
 		}
 
-		&__message{
+		&__message {
 			margin-bottom: 25px;
 		}
 
-		&__textarea{
+		&__textarea {
 			height: 180px !important;
 		}
 
-		&__admire{
+		&__admire {
 			margin-bottom: 25px;
 		}
 
-		&__footer{
+		&__footer {
 			flex-direction: column;
 
-			.btn{
+			.btn {
 				margin-right: auto;
 				padding-left: 58px;
 				padding-right: 58px;
@@ -143,5 +143,12 @@
 
 	@media (max-width: $screen-xs-max) {
 
+		&__block + &__block {
+			margin-left: 0;
+		}
+
+		&__block {
+			width: 100%;
+		}
 	}
 }
