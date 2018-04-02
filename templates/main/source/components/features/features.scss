@@ -100,14 +100,12 @@
 	}
 
 	@media (max-width: $screen-md) {
-		.container{
+		.container {
 			width: 100%;
 		}
 	}
 
 	@media (max-width: $screen-md) and (min-width: $screen-sm) {
-
-
 
 		&__item {
 
@@ -120,18 +118,17 @@
 				width: 50%;
 			}
 
-			&:hover{
+			&:hover {
 
-				.features__title{
+				.features__title {
 					top: 60px;
 				}
 
-				.features__text{
+				.features__text {
 					top: 60%;
 				}
 			}
 		}
-
 
 	}
 
@@ -147,16 +144,37 @@
 				width: 100%;
 			}
 
-			&:hover{
+			&:hover {
 
-				.features__title{
-					top: 60px;
+				.features__title {
+					top: 30px;
 				}
 
-				.features__text{
-					top: 60%;
+				.features__text {
+					top: 0;
+					transform: translate(0);
 				}
 			}
+		}
+
+		&__image {
+			height: auto;
+		}
+
+		&__desc,
+		&__text {
+			position: static;
+			opacity: 1;
+			height: auto;
+		}
+
+		&__title{
+			top: 30px;
+			transform: translateY(0) translateX(-50%);
+		}
+
+		&__desc {
+			padding: 20px 0;
 		}
 	}
 }

@@ -91,17 +91,17 @@
 			width: 100%;
 		}
 
-		&__title {
-			font-size: 24px;
+		&__bottom{
+
+			.work__title{
+				font-size: 24px;
+			}
 		}
 
-		&__desc {
-			padding: 50px 45px;
-			padding-bottom: 60px;
 
-			.work__title {
-				text-align: center;
-			}
+
+		&__desc {
+
 		}
 
 	}
@@ -118,6 +118,15 @@
 			font-size: 15px;
 
 		}
+
+		&__desc {
+			padding: 50px 45px;
+			padding-bottom: 60px;
+
+			.work__title {
+				text-align: center;
+			}
+		}
 	}
 
 	@media (max-width: $screen-xs-max) {
@@ -130,6 +139,15 @@
 			.work__title {
 				margin-bottom: 20px;
 			}
+		}
+
+		&__desc {
+			padding: 30px;
+
+		}
+
+		&__title {
+			font-size: 24px;
 		}
 	}
 }

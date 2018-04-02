@@ -1,5 +1,9 @@
 .clients {
 
+	.container{
+		max-width: 1200px;
+	}
+
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -16,6 +20,7 @@
 	}
 
 	&__title {
+		max-width: 390px;
 		margin-bottom: 20px;
 		color: #1e262c;
 		font-size: 30px;
@@ -97,9 +102,15 @@
 
 	@media (max-width: $screen-md) {
 
+
 		&__wrapper {
 			flex-wrap: wrap;
-			padding: 50px 0;
+			padding-bottom: 67px;
+		}
+
+		&__title{
+			max-width: initial;
+
 		}
 
 		&__left,
@@ -117,10 +128,14 @@
 	}
 
 	@media (max-width: $screen-md) and (min-width: $screen-sm) {
-
+		&__wrapper {
+			padding: 50px 0;
+		}
 	}
 
 	@media (max-width: $screen-xs-max) {
-
+		&__wrapper {
+			padding: 30px 0;
+		}
 	}
 }

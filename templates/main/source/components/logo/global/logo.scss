@@ -10,4 +10,18 @@
 		margin: 0 auto;
 		max-width: 100%;
 	}
+
+	@media (max-width: $screen-md) {
+		&__pic {
+			margin-left: 0;
+		}
+	}
+
+	@media (max-width: $screen-md) and (min-width: $screen-sm) {
+
+	}
+
+	@media (max-width: $screen-xs-max) {
+
+	}
 }

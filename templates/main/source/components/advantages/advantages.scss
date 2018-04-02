@@ -55,7 +55,7 @@
 	}
 
 	@media (max-width: $screen-md) {
-		padding: 50px 0;
+
 
 		&__row {
 			flex-wrap: wrap;
@@ -71,7 +71,6 @@
 
 		&__image{
 			max-width: 116px;
-			margin: 0 55px;
 		}
 
 		&__desc{
@@ -88,11 +87,43 @@
 	}
 
 	@media (max-width: $screen-md) and (min-width: $screen-sm) {
+		padding: 50px 0;
 
+		&__image{
+			margin: 0 24px;
+			margin-right: 60px;
+		}
+
+		.title{
+			margin-bottom: 63px;
+
+			&__promo{
+				margin-bottom: 19px;
+			}
+
+		}
+
+		&__item{
+			margin-bottom: 52px;
+		}
 	}
 
 	@media (max-width: $screen-xs-max) {
+		padding: 30px 0;
 
+		&__item{
+			flex-direction: column;
+			margin-bottom: 40px;
+		}
+
+		&__text{
+			max-width: initial;
+		}
+
+		&__image{
+
+			margin: 0;
+		}
 	}
 
 }

@@ -98,5 +98,8 @@
 
 	@media (max-width: $screen-xs-max) {
 
+		&__text {
+			margin-bottom: 20px;
+		}
 	}
 }
